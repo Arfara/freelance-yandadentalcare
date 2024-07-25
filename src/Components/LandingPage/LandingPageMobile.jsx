@@ -9,7 +9,7 @@ import dokyanda from '../Assets/dokyanda.svg';
 import doktasya from '../Assets/doktsaya.svg';
 import dokdannyar from '../Assets/dokdannyar.svg';
 import dokdewi from '../Assets/dokdewi.svg';
-import dokdimas from '../Assets/dokdimas.svg';
+import dokjanet from '../Assets/dokjanet.svg';
 import dokprima from '../Assets/dokprima.svg';
 import dokstephanie from '../Assets/dokstephanie.svg';
 import dokyonna from '../Assets/dokyonna.svg';
@@ -21,42 +21,70 @@ const doctors = [
   {
     image: dokyanda,
     name: 'drg. Yanda',
-    description: 'Spesialis gigi dan mulut dengan pengalaman lebih dari 10 tahun.'
+    description: 'Senin, Rabu, Jumat : 15.00 - 20.00 Kamis: 09.00 - 15.00',
+    phoneNumber: '+6285935000090', 
+    message: 'Halo Admin Yanda Dental Care 😊, saya ingin menanyakan tentang jadwal Dokter Yanda'
   },
   {
     image: doktasya,
     name: 'drg. Tasya',
-    description: 'Mengkhususkan diri dalam ortodonti dan perawatan gigi anak.'
+    description: 'Kamis: 15.00 - 20.00',
+    phoneNumber: '+6285935000090', 
+    message: 'Halo Admin Yanda Dental Care 😊, saya ingin menanyakan tentang jadwal Dokter Tasya'
   },
   {
     image: dokdannyar,
     name: 'drg. Dannyar',
-    description: 'Ahli dalam perawatan gigi estetika dan bedah mulut.'
+    description: (
+      <>
+        Rabu: 09.00 - 15.00
+        <br />
+        Sabtu: 15.00 - 20.00
+      </>
+    ),
+    phoneNumber: '+6285935000090', 
+    message: 'Halo Admin Yanda Dental Care 😊, saya ingin menanyakan tentang jadwal Dokter Dannyar'
   },
   {
     image: dokdewi,
     name: 'drg. Dewi',
-    description: 'Berpengalaman dalam perawatan saluran akar dan konservasi gigi.'
+    description: 'Selasa: 09.00 - 15.00',
+    phoneNumber: '+6285935000090', 
+    message: 'Halo Admin Yanda Dental Care 😊, saya ingin menanyakan tentang jadwal Dokter Dewi'
   },
   {
-    image: dokdimas,
-    name: 'drg. Dimas',
-    description: 'Fokus pada penanganan kasus gigi berlubang dan restorasi.'
+    image: dokjanet,
+    name: 'drg. Jannette Lazia',
+    description: 'Kamis: 15.00 - 20.00',
+    phoneNumber: '+6285935000090', 
+    message: 'Halo Admin Yanda Dental Care 😊, saya ingin menanyakan tentang jadwal Dokter Jannette'
   },
   {
     image: dokprima,
     name: 'drg. Prima',
-    description: 'Spesialis prostodonsia, menciptakan senyum indah dengan gigi palsu.'
+    description: (
+      <>
+        Selasa: 15.00 - 20.00
+        <br />
+        Sabtu, Minggu: 09.00 - 15.00
+      </>
+    ),
+    phoneNumber: '+6285935000090', 
+    message: 'Halo Admin Yanda Dental Care 😊, saya ingin menanyakan tentang jadwal Dokter Prima'
   },
   {
     image: dokstephanie,
     name: 'drg. Stephanie',
-    description: 'Mengutamakan pendekatan ramah anak dalam perawatan gigi.'
+    description: 'Senin, Jumat: 09.00 - 15.00',
+    phoneNumber: '+6285935000090', 
+    message: 'Halo Admin Yanda Dental Care 😊, saya ingin menanyakan tentang jadwal Dokter Stephanie'
   },
   {
     image: dokyonna,
     name: 'drg. Yonna',
-    description: 'Pakar dalam pemutihan gigi dan perawatan estetika lainnya.'
+    description: 'Minggu: 15.00 - 20.00',
+    phoneNumber: '+6285935000090', 
+    message: 'Halo Admin Yanda Dental Care 😊, saya ingin menanyakan tentang jadwal Dokter Yonna'
   }
 ];
 const LandingPageMobile = () => {
@@ -153,7 +181,6 @@ const LandingPageMobile = () => {
 
   return (
     <div className="font-sans relative">
-      {/* Sidebar */}
       <div
         className={`rounded-lg p-10 fixed top-0 right-0 bg-gray-900 text-white transform ${
           sidebarOpen ? 'translate-x-0' : 'translate-x-full'
@@ -182,9 +209,7 @@ const LandingPageMobile = () => {
         </button>
       </header>
 
-      {/* Main Content */}
-      <div className="pt-16"> {/* Adjust padding-top to account for fixed header */}
-        {/* Hero Section */}
+      <div className="pt-16">
         <section id="home" className="bg-gray-100 py-8 relative">
           <div className="container mx-auto flex flex-col items-center">
             <div className="text-center">
@@ -201,7 +226,6 @@ const LandingPageMobile = () => {
           </div>
         </section>
 
-        {/* About Section */}
         <section id="about" className="py-16 px-4 bg-gray-100">
           <div className="container mx-auto text-center">
             <div className="flex flex-col md:flex-row items-center mt-8 justify-center">
@@ -243,16 +267,15 @@ const LandingPageMobile = () => {
           </div>
         </section>
 
-        {/* Services Section */}
         <section id="services" className="bg-gray-100 py-16">
           <div className="container mx-auto px-6 text-center">
               <h2 className="text-3xl font-bold text-gray-700 mb-12">Layanan Kami</h2>
               <div className="overflow-x-auto">
-                  <div className="flex space-x-6 overflow-x-auto py-4">
+                  <div className="flex space-x-6 overflow-x-auto py-8 px-8">
                       <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
                           <img src="/path/to/service1.png" alt="Perawatan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
                           <h3 className="text-xl font-semibold text-gray-700 mb-2">Pembersihan Gigi Dewasa</h3>
-                          <p className="text-gray-600 mb-4 break-words">Nikmati pembersihan menyeluruh yang dirancang khusus untuk dewasa. Perawatan ini membantu menghilangkan plak, tartar, dan mencegah masalah gigi serta gusi.</p>
+                          <p className="text-gray-600 mb-4 break-words">Perawatan ini membantu menghilangkan plak, tartar, dan mencegah masalah gigi serta gusi.</p>
                           <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.50k*</a>
                       </div>
 
@@ -273,7 +296,7 @@ const LandingPageMobile = () => {
                       <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
                           <img src="/path/to/service3.png" alt="Pencabutan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
                           <h3 className="text-xl font-semibold text-gray-700 mb-2">Pencabutan Gigi</h3>
-                          <p className="text-gray-600 mb-4 break-words">Pencabutan gigi dilakukan dengan teknik canggih dan aman, menjamin kenyamanan Anda selama dan setelah prosedur untuk mengatasi gigi yang rusak atau bermasalah.</p>
+                          <p className="text-gray-600 mb-4 break-words">Cabut gigi adalah proses pengangkatan gigi dari soket gigi pada tulang rahang. Pasien yang mengalami nyeri dan tidak nyaman dengan pertumbuhan gigi menyimpang atau masalah gigi lainnya dapat mengambil tindakan ini.</p>
                           <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.400k*</a>
                       </div>
                       
@@ -282,6 +305,13 @@ const LandingPageMobile = () => {
                           <h3 className="text-xl font-semibold text-gray-700 mb-2">Pembuatan Gigi Palsu</h3>
                           <p className="text-gray-600 mb-4 break-words">Gigi palsu yang dibuat dengan presisi untuk memberikan kenyamanan dan fungsi seperti gigi asli, membantu Anda tersenyum dengan percaya diri.</p>
                           <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.000k*</a>
+                      </div>
+
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service4.png" alt="Pembuatan Gigi Palsu" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Implan Gigi</h3>
+                          <p className="text-gray-600 mb-4 break-words">Implan adalah akar gigi yang ditanamkan ke dalam rahang untuk menggantikan gigi yang copot. Terbuat dari titanium yang ringan, kuat, dan biokompatibel, implan gigi dapat diterima oleh tubuh.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.19.000k*</a>
                       </div>
                       
                       <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
@@ -308,37 +338,107 @@ const LandingPageMobile = () => {
                       <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
                           <img src="/path/to/service6.png" alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
                           <h3 className="text-xl font-semibold text-gray-700 mb-2">Penambalan Gigi</h3>
-                          <p className="text-gray-600 mb-4 break-words">Perawatan untuk mengisi lubang pada gigi yang rusak akibat kerusakan atau pembusukan, menggunakan bahan berkualitas untuk hasil yang tahan lama.</p>
+                          <p className="text-gray-600 mb-4 break-words">Tambal gigi adalah prosedur yang dilakukan untuk mengisi celah pada gigi berlubang.</p>
                           <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.350k*</a>
+                      </div>
+
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service6.png" alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Gingivektomi</h3>
+                          <p className="text-gray-600 mb-4 break-words">Gingivektomi adalah prosedur bedah untuk mengangkat gingiva atau jaringan gusi.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.475k*</a>
+                      </div>
+
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service6.png" alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Retainer Permanen</h3>
+                          <p className="text-gray-600 mb-4 break-words">Retainer adalah alat untuk mempertahankan posisi gigi agar tetap rapi dan tidak kembali berantakan setelah lepas behel. Retainer gigi permanen terbuat dari kawat tebal yang dibuat sesuai bentuk gigi yang sudah rapi.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.1.425k*</a>
+                      </div>
+
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service6.png" alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Retainer Removable</h3>
+                          <p className="text-gray-600 mb-4 break-words">Retainer adalah alat untuk mempertahankan posisi gigi agar tetap rapi dan tidak kembali berantakan setelah lepas behel. Retainer Hawley terbuat dari kawat logam tipis dan akrilik yang dibentuk agar sesuai dengan langit-langit mulut pasien atau di sepanjang bagian dalam rahang bawah.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
+                      </div>
+
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service6.png" alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Splinting Gigi</h3>
+                          <p className="text-gray-600 mb-4 break-words">Splinting gigi adalah prosedur untuk mengencangkan gigi-gigi yang goyang akibat trauma atau penyakit.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.380k*</a>
+                      </div>
+
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service6.png" alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Pemasangan Crown Gigi</h3>
+                          <p className="text-gray-600 mb-4 break-words">Dental crown atau crown gigi adalah sebuah proses pemasangan selubung gigi di atas gigi yang rusak.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
+                      </div>
+
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service6.png" alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Pemasangan Bridge Gigi</h3>
+                          <p className="text-gray-600 mb-4 break-words">Dental bridge adalah salah satu perawatan yang digunakan untuk mengisi kekosongan pada gigi yang hilang dengan konsep 'jembatan'.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
+                      </div>
+
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service6.png" alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Direct Veneer</h3>
+                          <p className="text-gray-600 mb-4 break-words">Direct veneer adalah jenis veneer yang dipasang secara langsung pada pasien menggunakan bahan resin komposit.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.4.700k*</a>
+                      </div>
+
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service6.png" alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Indirect Veneer</h3>
+                          <p className="text-gray-600 mb-4 break-words">
+                          Indirect veneer adalah jenis veneer yang umumnya terbuat dari bahan porcelain. Bahan yang satu ini cenderung lebih kuat dan hasilnya pun halus.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.15.000k*</a>
                       </div>
                   </div>
               </div>
           </div>
         </section>
 
-        <section id="dentist" className="bg-gray-100">    
+        <section id="dentist" className="bg-gray-100">
           <div className="container mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold text-gray-700 mb-12">Perkenalkan Dokter Kami</h2>
+            <h2 className="text-3xl font-bold text-gray-700 mb-5">Dokter Gigi Kami</h2>
+            <h3 className="text-gray-700 mb-12">Klik jadwal dokter untuk reservasi</h3>
             <div className="overflow-x-auto">
-              <div className="flex space-x-6 overflow-x-auto py-4">
-                {doctors.map((doctor, index) => (
-                  <div
-                    key={index}
-                    className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl relative overflow-hidden"
-                  >
-                    <div className="absolute inset-0 flex justify-center items-center">
-                      <img
-                        src={doctor.image}
-                        alt={`Doctor ${index}`}
-                        className="w-32 h-auto opacity-30"
-                      />
+              <div className="flex space-x-6 overflow-x-auto py-8 px-8">
+                {doctors.map((doctor, index) => {
+                  const encodedMessage = encodeURIComponent(doctor.message);
+                  const whatsappUrl = `https://api.whatsapp.com/send?phone=${doctor.phoneNumber}&text=${encodedMessage}`;
+
+                  return (
+                    <div
+                      key={index}
+                      className="cursor-pointer bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 flex justify-center items-center">
+                        <img
+                          src={doctor.image}
+                          alt={`Doctor ${index}`}
+                          className="w-32 h-auto opacity-30"
+                        />
+                      </div>
+                      <div className="relative z-10 mt-10">
+                        <h3 className="text-xl font-semibold text-gray-700 mb-2">{doctor.name}</h3>
+                        <a 
+                          href={whatsappUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-600 mb-4 break-words inline-block"
+                        >
+                          {doctor.description}
+                        </a>
+                      </div>
                     </div>
-                    <div className="relative z-10 mt-10">
-                      <h3 className="text-xl font-semibold text-gray-700 mb-2">{doctor.name}</h3>
-                      <p className="text-gray-600 mb-4 break-words">{doctor.description}</p>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -385,7 +485,6 @@ const LandingPageMobile = () => {
             </div>
           </div>
         </section>
-
 
         <section id="location" className="bg-gray-100 py-16 text-center">
           <div>
