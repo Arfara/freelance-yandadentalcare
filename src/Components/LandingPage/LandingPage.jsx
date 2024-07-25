@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import bumpervideo from '../Assets/bumpervideo.mp4';
-import logo from '../Assets/logo_2.svg';
+import logo1 from '../Assets/logo_1.svg';
 import rectangle1 from '../Assets/Rectangle1.svg';
 import ellipse1 from '../Assets/Ellipse1.svg';
 import dokvector1 from '../Assets/dokvector1.svg';
@@ -13,8 +13,52 @@ import dokdimas from '../Assets/dokdimas.svg';
 import dokprima from '../Assets/dokprima.svg';
 import dokstephanie from '../Assets/dokstephanie.svg';
 import dokyonna from '../Assets/dokyonna.svg';
+import istanayatim from '../Assets/istanayatim.MOV';
+import wa from '../Assets/WhatsApp_icon.png';
+import mitos_fakta from '../Assets/mitos_fakta.jpg';
 
-const doctors = [dokyanda, doktasya, dokdannyar, dokdewi, dokdimas, dokprima, dokstephanie, dokyonna];
+const doctors = [
+  {
+    image: dokyanda,
+    name: 'drg. Yanda',
+    description: 'Spesialis gigi dan mulut dengan pengalaman lebih dari 10 tahun.'
+  },
+  {
+    image: doktasya,
+    name: 'drg. Tasya',
+    description: 'Mengkhususkan diri dalam ortodonti dan perawatan gigi anak.'
+  },
+  {
+    image: dokdannyar,
+    name: 'drg. Dannyar',
+    description: 'Ahli dalam perawatan gigi estetika dan bedah mulut.'
+  },
+  {
+    image: dokdewi,
+    name: 'drg. Dewi',
+    description: 'Berpengalaman dalam perawatan saluran akar dan konservasi gigi.'
+  },
+  {
+    image: dokdimas,
+    name: 'drg. Dimas',
+    description: 'Fokus pada penanganan kasus gigi berlubang dan restorasi.'
+  },
+  {
+    image: dokprima,
+    name: 'drg. Prima',
+    description: 'Spesialis prostodonsia, menciptakan senyum indah dengan gigi palsu.'
+  },
+  {
+    image: dokstephanie,
+    name: 'drg. Stephanie',
+    description: 'Mengutamakan pendekatan ramah anak dalam perawatan gigi.'
+  },
+  {
+    image: dokyonna,
+    name: 'drg. Yonna',
+    description: 'Pakar dalam pemutihan gigi dan perawatan estetika lainnya.'
+  }
+];
 
 const LandingPage = () => {
   const [currentDoctor, setCurrentDoctor] = useState(0);
@@ -37,163 +81,340 @@ const LandingPage = () => {
     return () => clearInterval(interval);
   }, [controls]);
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDXiinNcPuEv1S1T4rtpeF-mwVp-HOk9yY&libraries=places`;
+    script.async = true;
+    document.body.appendChild(script);
+    script.onload = initMap;
+  }, []);
+
+  const initMap = () => {
+    const placeId = 'ChIJmxSYhSyLaS4RzqP648I6BDw';
+    const map = new window.google.maps.Map(document.createElement('div')); // Create a dummy map
+  
+    const service = new window.google.maps.places.PlacesService(map);
+    service.getDetails({
+      placeId: placeId,
+      fields: ['reviews'],
+      language: 'id'
+    }, (place, status) => {
+      if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+        const reviewsContainer = document.getElementById('reviews-container');
+        reviewsContainer.innerHTML = ''; 
+  
+        const sortedReviews = place.reviews.sort((a, b) => new Date(b.time * 1000) - new Date(a.time * 1000));
+
+        sortedReviews.slice(0, 10).forEach(review => {
+          const reviewDiv = document.createElement('div');
+          reviewDiv.className = 'cursor-pointer bg-white shadow-lg rounded-lg p-6 w-80 h-auto flex-none transition-transform transform hover:scale-105 hover:shadow-xl';
+  
+          const authorContainer = document.createElement('div');
+          authorContainer.className = 'flex flex-col items-center mb-2';
+  
+          if (review.profile_photo_url) {
+            const profilePhoto = document.createElement('img');
+            profilePhoto.src = review.profile_photo_url;
+            profilePhoto.alt = 'Profile photo';
+            profilePhoto.className = 'w-10 h-10 rounded-full mb-2';
+            authorContainer.appendChild(profilePhoto);
+          }
+  
+          const author = document.createElement('h3');
+          author.className = 'text-xl font-semibold text-gray-700 text-center';
+          author.textContent = review.author_name;
+  
+          authorContainer.appendChild(author);
+  
+          const rating = document.createElement('div');
+          rating.className = 'text-yellow-500 mb-2 text-center';
+          rating.textContent = '★'.repeat(review.rating);
+  
+          const date = document.createElement('div');
+          date.className = 'text-gray-500 mb-2 text-center text-sm';
+          date.textContent = new Date(review.time * 1000).toLocaleDateString();
+  
+          const text = document.createElement('p');
+          text.className = 'text-gray-600 mb-4 break-words overflow-hidden';
+          text.style.maxHeight = '6rem';
+          text.textContent = review.text;
+  
+          reviewDiv.appendChild(authorContainer);
+          reviewDiv.appendChild(rating);
+          reviewDiv.appendChild(date);
+          reviewDiv.appendChild(text);
+  
+          reviewsContainer.appendChild(reviewDiv);
+        });
+      }
+    });
+  };
+  
   return (
-    <div className="font-sans overflow-x-hidden">
-      {/* Header */}
-      <header className="bg-gray-900 text-white">
-        <div className="container mx-auto flex justify-between items-center py-4 px-4">
-          <div className="text-2xl font-bold text-gray-800"></div>
-          <div className="space-x-4">
-            <a href="#home" className="text-white-800 hover:text-yellow-500">Home</a>
-            <a href="#about" className="text-white-800 hover:text-yellow-500">About us</a>
-            <a href="#services" className="text-white-800 hover:text-yellow-500">Our Services</a>
-            <a href="#dentist" className="text-white-800 hover:text-yellow-500">Our Dentist</a>
-            <a href="#contact" className="text-white-800 hover:text-yellow-500">Contact us</a>
+    <div className='relative'>
+      <div className="font-sans overflow-x-hidden">
+        <header className="bg-gray-900 text-white">
+          <div className="container mx-auto flex justify-between items-center py-4 px-4">
+            <img src={logo1} className='w-20'></img>
+            <div className="text-2xl font-bold text-gray-800"></div>
+            <div className="space-x-4">
+              <a href="#home" className="text-white hover:text-yellow-500">Home</a>
+              <a href="#about" className="text-white hover:text-yellow-500">Tentang Kami</a>
+              <a href="#services" className="text-white hover:text-yellow-500">Layanan</a>
+              <a href="#dentist" className="text-white hover:text-yellow-500">Dokter Kami</a>
+              <a href="#contact" className="text-white hover:text-yellow-500">Hubungi Kami</a>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
 
         {/* Hero Section */}
-          <section id="home" className="bg-gray-100 py-16 relative">
-            <div className="container mx-auto flex flex-col md:flex-row items-center">
-              <div className="md:w-1/2 text-center md:text-left flex flex-col justify-center">
-                <div className="flex items-center mb-4">
-                  <video src={bumpervideo} width="1000" height="800" autoPlay loop muted />
+        <section id="home" className="bg-gray-100 py-16 relative">
+          <div className="container mx-auto flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2 text-center md:text-left flex flex-col justify-center">
+              <div className="flex items-center mb-4">
+                <video src={bumpervideo} width="1000" height="800" autoPlay loop muted />
+              </div>
+            </div>
+            <div className="md:w-1/2 relative flex justify-center md:justify-end">
+              <img src={rectangle1} alt="Rectangle 1" className="absolute left-20 md:w-2/3 transform translate-x-10 translate-y-10 z-0" />
+              <img src={ellipse1} alt="Ellipse 1" className="absolute bottom-10 right-10 md:w-1/3 transform translate-x-10 translate-y-10 z-0" />
+              <motion.img src={doctors[currentDoctor].image} alt="doctor" className="relative mr-20 top-6 z-10 w-2/3" animate={controls} initial={{ opacity: 0 }} />
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="py-16">
+          <div className="container mx-auto text-center px-4">
+            <div className="flex flex-col md:flex-row items-center mt-8 justify-between">
+              <div className="md:w-1/3">
+                <img src={dokvector1} alt="Doctor Vector" className="mx-auto"/>
+              </div>
+              <div className="md:w-1/2 md:mt-0 md:ml-10 rounded-lg bg-white shadow-xl p-8">
+                <h1 className="text-left text-xl font-semibold mb-6">
+                  Pelayanan Kesehatan Gigi dan Mulut oleh Dokter gigi yang ramah, profesional, dan berpengalaman
+                </h1>
+                <ul className="mt-6 space-y-4">
+                  <li className="flex items-start">
+                    <div className="ml-4 bg-gray-100 border-l-4 border-yellow-500 shadow-md rounded-lg p-4 flex-1">
+                      <h4 className="text-gray-800 font-bold text-lg flex items-center">
+                        Profesional
+                      </h4>
+                      <p className="text-left text-gray-600 text-sm">Memberikan layanan medis dengan keahlian dan standar tinggi untuk hasil yang optimal.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="ml-4 bg-gray-100 border-l-4 border-yellow-500 shadow-md rounded-lg p-4 flex-1">
+                      <h4 className="text-left text-gray-800 font-bold text-lg flex items-center">
+                        Mengutamakan Keluhan, kebutuhan, dan kepentingan pasien
+                      </h4>
+                      <p className="text-left text-gray-600 text-sm">Memprioritaskan setiap aspek kebutuhan pasien untuk perawatan yang lebih personal dan efektif.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="ml-4 bg-gray-100 border-l-4 border-yellow-500 shadow-md rounded-lg p-4 flex-1">
+                      <h4 className="text-left text-gray-800 font-bold text-lg flex items-center">
+                        Memberikan pengalaman perawatan gigi yang menyenangkan
+                      </h4>
+                      <p className="text-left text-gray-600 text-sm">Menciptakan suasana yang nyaman dan menyenangkan untuk pengalaman perawatan yang lebih baik.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className="bg-gray-100 py-16">
+          <div className="container mx-auto px-6 text-center">
+              <h2 className="text-3xl font-bold text-gray-700 mb-12">Layanan Kami</h2>
+              <div className="overflow-x-auto">
+                  <div className="flex space-x-6 overflow-x-auto py-4">
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service1.png" alt="Perawatan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Pembersihan Gigi Dewasa</h3>
+                          <p className="text-gray-600 mb-4 break-words">Nikmati pembersihan menyeluruh yang dirancang khusus untuk dewasa. Perawatan ini membantu menghilangkan plak, tartar, dan mencegah masalah gigi serta gusi.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.50k*</a>
+                      </div>
+
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="" alt="Perawatan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Perawatan Gigi Anak</h3>
+                          <p className="text-gray-600 mb-4 break-words">Perawatan khusus untuk anak-anak yang menjaga kesehatan gigi mereka dengan metode yang lembut dan menyenangkan, memastikan gigi mereka tumbuh sehat.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.250k*</a>
+                      </div>
+                      
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service2.png" alt="Ortodonti" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Ortodonti</h3>
+                          <p className="text-gray-600 mb-4 break-words">Perawatan ortodonti untuk merapikan gigi dan rahang Anda, menggunakan alat seperti kawat gigi untuk hasil yang lebih baik dan senyum yang lebih proporsional.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.800k*</a>
+                      </div>
+                      
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service3.png" alt="Pencabutan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Pencabutan Gigi</h3>
+                          <p className="text-gray-600 mb-4 break-words">Pencabutan gigi dilakukan dengan teknik canggih dan aman, menjamin kenyamanan Anda selama dan setelah prosedur untuk mengatasi gigi yang rusak atau bermasalah.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.400k*</a>
+                      </div>
+                      
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service4.png" alt="Pembuatan Gigi Palsu" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Pembuatan Gigi Palsu</h3>
+                          <p className="text-gray-600 mb-4 break-words">Gigi palsu yang dibuat dengan presisi untuk memberikan kenyamanan dan fungsi seperti gigi asli, membantu Anda tersenyum dengan percaya diri.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.000k*</a>
+                      </div>
+                      
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service5.png" alt="Bleaching" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Bleaching</h3>
+                          <p className="text-gray-600 mb-4 break-words">Prosedur pemutihan gigi untuk mencerahkan senyum Anda dengan aman, menghilangkan noda dan menjadikan gigi Anda lebih bersinar.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.50k*</a>
+                      </div>
+                      
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service6.png" alt="Perawatan Saluran Akar" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Perawatan Saluran Akar</h3>
+                          <p className="text-gray-600 mb-4 break-words">Perawatan untuk mengatasi infeksi dalam saluran akar gigi, memberikan solusi jangka panjang untuk masalah gigi yang parah dan mengurangi rasa sakit.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.400k*</a>
+                      </div>
+
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service6.png" alt="Pembersihan Karang Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Pembersihan Karang Gigi</h3>
+                          <p className="text-gray-600 mb-4 break-words">Proses pembersihan yang mendalam untuk menghilangkan karang gigi yang menumpuk, mencegah penyakit gusi dan menjaga kesehatan mulut Anda.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.150k*</a>
+                      </div>
+
+                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                          <img src="/path/to/service6.png" alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Penambalan Gigi</h3>
+                          <p className="text-gray-600 mb-4 break-words">Perawatan untuk mengisi lubang pada gigi yang rusak akibat kerusakan atau pembusukan, menggunakan bahan berkualitas untuk hasil yang tahan lama.</p>
+                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.350k*</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </section>
+
+        <section id="dentist" className="bg-gray-100">    
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-3xl font-bold text-gray-700 mb-12">Perkenalkan Dokter Kami</h2>
+            <div className="overflow-x-auto">
+              <div className="flex space-x-6 overflow-x-auto py-4">
+                {doctors.map((doctor, index) => (
+                  <div
+                    key={index}
+                    className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl relative overflow-hidden"
+                  >
+                    <div className="absolute inset-0 flex justify-center items-center">
+                      <img
+                        src={doctor.image}
+                        alt={`Doctor ${index}`}
+                        className="w-32 h-auto opacity-30"
+                      />
+                    </div>
+                    <div className="relative z-10 mt-10">
+                      <h3 className="text-xl font-semibold text-gray-700 mb-2">{doctor.name}</h3>
+                      <p className="text-gray-600 mb-4 break-words">{doctor.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="activity-header" className="container mx-auto px-4 mt-12 text-left bg-white">
+          <h2 className="text-3xl font-bold text-gray-700 text-center">Aktivitas Kami</h2>
+        </section>
+
+        <section id="activity" className="container mx-auto py-16 px-4 text-left overflow-y-auto max-h-screen">
+          <div className="mt-5 space-y-8">
+            <div className="flex items-start bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-103 hover:shadow-2xl">
+                <video src={istanayatim} width="300" height="100" autoPlay loop muted className='rounded-lg' />
+              <div className='ml-10'>
+                <h3 className="text-xl font-semibold text-gray-700">Yanda Dental Care Mengadakan Program Perawatan Gigi dan Mulut Gratis di Istana Yatim Panti Asuhan</h3>
+                <p className="text-gray-600 mt-2">Yanda Dental Care dengan bangga mengadakan program perawatan gigi dan mulut gratis untuk anak-anak di Istana Yatim Panti Asuhan, sebagai bagian dari komitmen kami untuk memberikan kontribusi positif kepada masyarakat. Program ini mencakup pemeriksaan gigi rutin, pembersihan gigi, penambalan gigi, serta edukasi tentang pentingnya menjaga kesehatan gigi dan mulut, yang semuanya dilakukan oleh tim profesional kami. Dengan dukungan donatur dan relawan, kami berharap dapat meningkatkan kesehatan gigi anak-anak yatim piatu, menghindarkan mereka dari masalah gigi, dan memberikan mereka senyum yang sehat dan indah.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="blogs" className="bg-gray-100 py-16">
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-3xl font-bold text-gray-700 mb-12">Blogs</h2>
+            <div className="overflow-x-auto">
+              <div className="flex justify-center space-x-6 overflow-x-auto py-4">
+                <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl">
+                  <img src={mitos_fakta} alt="Mitos Fakta" className="h-40 w-full object-cover rounded-md mb-4"/>
+                  <h3 className="text-xl font-semibold text-gray-700 mb-2">Gula Penyebab Gigi Karies?Mitos atau Fakta?</h3>
+                  <p className="text-gray-600 mb-4 break-words">"Bukan gula loh sebabnya. Tapi, bakteri di gigi yang memakan gula adalah penyebabnya. Makanan lengket, seperti pati, menarik bakteri untuk berkembang biak di dalam dan sekitar gigi.</p>
+                  <a href="#" className="text-yellow-500 font-semibold inline-block">Read more</a>
                 </div>
               </div>
-              <div className="md:w-1/2 relative flex justify-center md:justify-end">
-                <img src={rectangle1} alt="Rectangle 1" className="absolute left-20 md:w-2/3 transform translate-x-10 translate-y-10 z-0" />
-                <img src={ellipse1} alt="Ellipse 1" className="absolute bottom-10 right-10 md:w-1/3 transform translate-x-10 translate-y-10 z-0" />
-                <motion.img src={doctors[currentDoctor]} alt="doctor" className="relative mr-20 top-6 z-10 w-2/3" animate={controls} initial={{ opacity: 0 }} />
-              </div>
-            </div>
-          </section>
-
-      <section id="about" className="py-16">
-        <div className="container mx-auto text-center px-4">
-          <div className="flex flex-col md:flex-row items-center mt-8">
-            <div className="md:w-1/3">
-              <img src={dokvector1} alt="Doctor Vector" className="mx-auto"/>
-            </div>
-            <div className="md:w-2/3 md:mt-0 md:ml-20">
-              <ul className="mt-8 space-y-4">
-                <li className="flex items-start">
-                  <div className="w-8 h-8 bg-yellow-500 text-white flex items-center justify-center rounded-full">✔️</div>
-                  <div className="ml-4">
-                    <h4 className="text-gray-800 font-bold">Lorem Ipsum</h4>
-                    <p className="text-gray-600">Pellentesque ultricies purus ac ex cursus erat tincidunt eu. Duis malesuada eget leo quis porttitor.</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-8 h-8 bg-yellow-500 text-white flex items-center justify-center rounded-full">✔️</div>
-                  <div className="ml-4">
-                    <h4 className="text-gray-800 font-bold">Lorem Ipsum</h4>
-                    <p className="text-gray-600">Pellentesque ultricies purus ac ex cursus erat tincidunt eu. Duis malesuada eget leo quis porttitor.</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-8 h-8 bg-yellow-500 text-white flex items-center justify-center rounded-full">✔️</div>
-                  <div className="ml-4">
-                    <h4 className="text-gray-800 font-bold">Lorem Ipsum</h4>
-                    <p className="text-gray-600">Pellentesque ultricies purus ac ex cursus erat tincidunt eu. Duis malesuada eget leo quis porttitor.</p>
-                  </div>
-                </li>
-              </ul>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="services" className="bg-gray-100 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-gray-700">Our Services</h2>
-          <div className="flex flex-wrap justify-center mt-8">
-            <div className="bg-white shadow-lg rounded-lg p-4 m-4 w-full md:w-64">
-              <img src="/path/to/service1.png" alt="Service 1" className="h-32 w-full object-cover rounded"/>
-              <h3 className="text-xl font-semibold text-gray-700 mt-4">Service 1</h3>
-              <p className="text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis et sem sed malesuada.</p>
-              <a href="#" className="text-yellow-500 mt-4 inline-block">Read More</a>
-            </div>
-            <div className="bg-white shadow-lg rounded-lg p-4 m-4 w-full md:w-64">
-              <img src="/path/to/service2.png" alt="Service 2" className="h-32 w-full object-cover rounded"/>
-              <h3 className="text-xl font-semibold text-gray-700 mt-4">Service 2</h3>
-              <p className="text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis et sem sed malesuada.</p>
-              <a href="#" className="text-yellow-500 mt-4 inline-block">Read More</a>
-            </div>
-            <div className="bg-white shadow-lg rounded-lg p-4 m-4 w-full md:w-64">
-              <img src="/path/to/service3.png" alt="Service 3" className="h-32 w-full object-cover rounded"/>
-              <h3 className="text-xl font-semibold text-gray-700 mt-4">Service 3</h3>
-              <p className="text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis et sem sed malesuada.</p>
-              <a href="#" className="text-yellow-500 mt-4 inline-block">Read More</a>
+        <section id="google-reviews" className="bg-white-100 py-16">
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-3xl font-bold text-gray-700 mb-5">Review Pasien</h2>
+              <a href="https://www.google.com/search?q=yanda+dental+care+review&oq=yanda+dental+care+review&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDM3MjZqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x2e698b2c8598149b:0x3c043ac2e3faa3ce,1,,,," target="_blank" className="text-white py-2 px-4 rounded inline-block bg-yellow-500 mb-5">Lihat Review Selengkapnya di Google!</a>
+            <div className="overflow-x-auto">
+              <div id="reviews-container" className="flex space-x-6 overflow-x-auto py-4"></div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="dentist" className="py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-gray-700">Meet Our Dentists</h2>
-          <div className="flex flex-wrap justify-center mt-8">
-            {doctors.map((doctor, index) => (
-              <div key={index} className="bg-white shadow-lg rounded-lg p-4 m-4 w-full md:w-64">
-                <img src={doctor} alt={`Doctor ${index}`} className="h-32 w-full object-cover rounded"/>
-                <h3 className="text-xl font-semibold text-gray-700 mt-4">Doctor {index + 1}</h3>
-                <p className="text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis et sem sed malesuada.</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      <section id="activity" className="container mx-auto py-16 px-4 text-center">
-        <h2 className="text-2xl font-bold text-gray-700">Our Clinic Activity</h2>
-        <div className="flex flex-wrap justify-center mt-8">
-          <div className="bg-white shadow-lg rounded-lg p-4 m-4 w-64">
-            <img src="/path/to/activity1.png" alt="Activity 1" className="h-32 w-full object-cover rounded"/>
-            <h3 className="text-xl font-semibold text-gray-700 mt-4">Activity 1</h3>
-            <p className="text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis et sem sed malesuada.</p>
+        <section id="location" className="bg-gray-100 py-16 text-center">
+          <div>
+            <h2 className="text-3xl font-bold text-gray-700 mb-12 text-center">Lokasi Klinik Kami</h2>
           </div>
-          <div className="bg-white shadow-lg rounded-lg p-4 m-4 w-64">
-            <img src="/path/to/activity2.png" alt="Activity 2" className="h-32 w-full object-cover rounded"/>
-            <h3 className="text-xl font-semibold text-gray-700 mt-4">Activity 2</h3>
-            <p className="text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis et sem sed malesuada.</p>
+          <div className="container mx-auto mt-8">
+            <iframe
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDXiinNcPuEv1S1T4rtpeF-mwVp-HOk9yY&q=place_id:ChIJmxSYhSyLaS4RzqP648I6BDw"
+              width="850"
+              height="450"
+              allowFullScreen=""
+              loading="lazy"
+              className="mx-auto rounded-lg"
+            ></iframe>
           </div>
-          <div className="bg-white shadow-lg rounded-lg p-4 m-4 w-64">
-            <img src="/path/to/activity3.png" alt="Activity 3" className="h-32 w-full object-cover rounded"/>
-            <h3 className="text-xl font-semibold text-gray-700 mt-4">Activity 3</h3>
-            <p className="text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis et sem sed malesuada.</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="location" className="bg-gray-100 py-16 text-center">
-        <h2 className="text-2xl font-bold text-gray-700">Our Clinic Location</h2>
-        <div className="container mx-auto mt-8">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.95565131531677!3d-37.81732797975192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577e8d75dfb1c0!2sClinic!5e0!3m2!1sen!2sau!4v1611728482679!5m2!1sen!2sau"
-            width="600"
-            height="450"
-            allowFullScreen=""
-            loading="lazy"
-            className="mx-auto"
-          ></iframe>
+        <div className="fixed bottom-4 right-4 flex items-center space-x-2 bg-white p-4 rounded-lg shadow-lg">
+          <img src={wa} alt="WhatsApp Logo" className="w-8 h-8" />
+          <a 
+            href="https://api.whatsapp.com/send?phone=+6285935000090&text=Halo Admin Yanda Dental Care 😊 Saya ingin booking jadwal di klinik pada hari ... tanggal ... di jam ... Saya butuh layanan ..." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-green-500 font-bold"
+          >
+            Hubungi Kami di WhatsApp
+          </a>
         </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8">
-        <div className="container mx-auto flex justify-between items-center py-4 px-2">
-          <div className="text-xs">
-            <span className="block mb-1">Ruko New East No. 65B Jalan Jakarta Garden City Boulevard</span>
-            <span className="block mb-1">yandadentalcare@yahoo.com</span>
-            <span className="block mb-1">085935000090</span>
+        <footer className="bg-gray-800 text-white py-8">
+          <div className="container mx-auto flex justify-between items-center py-4 px-2">
+            <div className="text-xs">
+              <span className="block mb-1">Ruko New East No. 65B Jalan Jakarta Garden City Boulevard</span>
+              <span className="block mb-1">yandadentalcare@yahoo.com</span>
+              <span className="block mb-1">085935000090</span>
+            </div>
+            <button className="bg-yellow-500 text-black py-2 px-4 rounded text-sm">Book Now</button>
           </div>
-          <button className="bg-yellow-500 text-black py-2 px-4 rounded text-sm">Book Now</button>
-        </div>
-        <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2024 Yanda Dental Care. All rights reserved.</p>
-        </div>
-      </footer>
+          <div className="container mx-auto px-4 text-center">
+            <div className="flex justify-center space-x-4 mb-4">
+              <a href="https://www.instagram.com" className="text-white hover:text-yellow-500"><i className="fab fa-instagram fa-lg"></i></a>
+              <a href="https://www.twitter.com" className="text-white hover:text-yellow-500"><i className="fab fa-twitter fa-lg"></i></a>
+              <a href="https://www.facebook.com" className="text-white hover:text-yellow-500"><i className="fab fa-facebook-f fa-lg"></i></a>
+            </div>
+            <p>&copy; 2024 Yanda Dental Care. All rights reserved.</p>
+          </div>
+        </footer>
+
+      </div>
     </div>
   );
 };
