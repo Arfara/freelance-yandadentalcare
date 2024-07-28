@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import LandingPageMobile from "./Components/LandingPage/LandingPageMobile";
+import BlogPost from "./BlogPost";
 
 function App() {
   const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
@@ -20,6 +21,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={isMobile ? <LandingPageMobile /> : <LandingPage />} />
+          <Route path="/blog/:slug" Component={BlogPost}/>
         </Routes>
       </Router>
     </div>
