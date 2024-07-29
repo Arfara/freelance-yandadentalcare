@@ -14,6 +14,7 @@ const Loading = () => (
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [loading, setLoading] = useState(true);
+  const [serverLoading, setServerLoading] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,7 +24,30 @@ function App() {
     window.addEventListener('resize', handleResize);
 
     const loadData = async () => {
-      await new Promise(resolve => setTimeout(resolve, 3000));
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      setServerLoading(false);
+
+      const images = Array.from(document.images);
+      const videos = Array.from(document.querySelectorAll('video'));
+
+      const mediaPromises = [
+        ...images.map(img => new Promise(resolve => {
+          if (img.complete) {
+            resolve();
+          } else {
+            img.onload = img.onerror = resolve;
+          }
+        })),
+        ...videos.map(video => new Promise(resolve => {
+          if (video.readyState === 4) {
+            resolve();
+          } else {
+            video.onloadeddata = video.onerror = resolve;
+          }
+        }))
+      ];
+
+      await Promise.all(mediaPromises);
       setLoading(false);
     };
 
@@ -32,7 +56,7 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  if (loading) {
+  if (loading || serverLoading) {
     return <Loading />;
   }
 
