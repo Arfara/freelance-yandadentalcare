@@ -201,8 +201,8 @@ const LandingPage = () => {
     <div className='relative'>
       <div className="font-sans overflow-x-hidden">
         <header className="bg-gray-900 text-white">
-          <div className="container mx-auto flex justify-between items-center py-4 px-4">
-            <img src={logo1} className='w-20'></img>
+          <div className="container mx-auto flex justify-between items-center py-8 px-4">
+            <img src={logo1} className='w-32'></img>
             <div className="text-2xl font-bold text-gray-800"></div>
             <div className="space-x-4">
               <Link to="home" smooth={true} duration={500} className="cursor-pointer text-white hover:text-yellow-500">Home</Link>
@@ -212,7 +212,7 @@ const LandingPage = () => {
             </div>
           </div>
         </header>
-
+        
         <Element name="home">
           <section id="home" className="bg-gray-100 py-16 relative">
             <div className="container mx-auto flex flex-col md:flex-row items-center">
