@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import LandingPageMobile from "./Components/LandingPage/LandingPageMobile";
 import BlogPost from "./BlogPost";
-import loading from '../src/Components/Assets/loading.mp4';
+import loading from '../src/Components/Assets/loading.svg';
 
 const Loading = () => (
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-    <video src={loading} width="400" height="200" autoPlay loop muted />
+    <img src={loading} width="100" height="50"/>
   </div>
 );
 
@@ -24,7 +24,7 @@ function App() {
     window.addEventListener('resize', handleResize);
 
     const loadData = async () => {
-      await new Promise(resolve => setTimeout(resolve, 5000));
+      await new Promise(resolve => setTimeout(resolve, 3000));
       setServerLoading(false);
 
       const images = Array.from(document.images);

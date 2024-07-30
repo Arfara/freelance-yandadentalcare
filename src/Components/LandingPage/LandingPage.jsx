@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import React, { useEffect } from 'react';
 import { Link, Element } from 'react-scroll';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination, Autoplay } from 'swiper/modules';
 import Home from '../../Home';
 import bumpervideo from '../Assets/bumpervideo.mp4';
 import logo1 from '../Assets/logo_1.svg';
@@ -15,11 +18,12 @@ import dokjanet from '../Assets/dokjanet.svg';
 import dokprima from '../Assets/dokprima.svg';
 import dokstephanie from '../Assets/dokstephanie.svg';
 import dokyonna from '../Assets/dokyonna.svg';
-import istanayatim from '../Assets/istanayatim.mp4';
+import istanayatim from '../Assets/istanayatim.jpg';
+import istanayatim2 from '../Assets/istanayatim2.jpg';
+import istanayatim3 from '../Assets/istanayatim3.jpg';
 import wa from '../Assets/WhatsApp_icon.png';
-import mitos_fakta from '../Assets/mitos_fakta.jpg';
-import pem_gigi_dewasa from '../Assets/pem_gigi_dewasa.svg';
-import pem_gigi_anak from '../Assets/pem_gigi_anak.svg';
+import pem_gigi_dewasa from '../Assets/pem_gigi_dewasa.jpeg';
+import pem_gigi_anak from '../Assets/pem_gigi_anak.jpg';
 import ortodonti from '../Assets/ortodonti.jpg';
 import cabut_gigi from '../Assets/cabut_gigi.jpg';
 import gigi_palsu from '../Assets/gigi_palsu.jpg';
@@ -109,94 +113,97 @@ const doctors = [
 ];
 
 const LandingPage = () => {
-  const [currentDoctor, setCurrentDoctor] = useState(0);
-  const controls = useAnimation();
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      controls.start({
-        opacity: 0,
-        transition: { duration: 0.5 },
-      }).then(() => {
-        setCurrentDoctor((prevDoctor) => (prevDoctor + 1) % doctors.length);
-        controls.start({
-          opacity: 1,
-          transition: { duration: 0.5 },
-        });
-      });
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [controls]);
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&libraries=places`;    script.async = true;
-    document.body.appendChild(script);
-    script.onload = initMap;
+    const existingScript = document.querySelector(`script[src*="maps.googleapis.com"]`);
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&libraries=places`;
+      script.async = true;
+      script.defer = true;
+      script.onload = () => window.initMap(); // Change here to call initMap on window object
+      document.body.appendChild(script);
+    } else {
+      window.initMap(); // Change here to call initMap on window object
+    }
   }, []);
-
-  const initMap = () => {
+  
+  window.initMap = () => {
+    if (!window.google) {
+      console.error('Google Maps JavaScript API is not loaded');
+      return;
+    }
+  
     const placeId = 'ChIJmxSYhSyLaS4RzqP648I6BDw';
-    const map = new window.google.maps.Map(document.createElement('div')); 
+    const map = new window.google.maps.Map(document.createElement('div'));
   
     const service = new window.google.maps.places.PlacesService(map);
-    service.getDetails({
-      placeId: placeId,
-      fields: ['reviews'],
-      language: 'id'
-    }, (place, status) => {
-      if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-        const reviewsContainer = document.getElementById('reviews-container');
-        reviewsContainer.innerHTML = ''; 
+    service.getDetails(
+      {
+        placeId: placeId,
+        fields: ['reviews'],
+        language: 'id',
+      },
+      (place, status) => {
+        if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+          const reviewsContainer = document.getElementById('reviews-container');
+          if (reviewsContainer) {
+            reviewsContainer.innerHTML = '';
   
-        const sortedReviews = place.reviews.sort((a, b) => new Date(b.time * 1000) - new Date(a.time * 1000));
-
-        sortedReviews.slice(0, 10).forEach(review => {
-          const reviewDiv = document.createElement('div');
-          reviewDiv.className = 'cursor-pointer bg-white shadow-lg rounded-lg p-6 w-80 h-auto flex-none transition-transform transform hover:scale-105 hover:shadow-xl';
+            const sortedReviews = place.reviews.sort(
+              (a, b) => new Date(b.time * 1000) - new Date(a.time * 1000)
+            );
   
-          const authorContainer = document.createElement('div');
-          authorContainer.className = 'flex flex-col items-center mb-2';
+            sortedReviews.slice(0, 10).forEach((review) => {
+              const reviewDiv = document.createElement('div');
+              reviewDiv.className =
+                'cursor-pointer bg-white shadow-lg rounded-lg p-6 w-80 h-auto flex-none transition-transform transform hover:scale-105 hover:shadow-xl';
   
-          if (review.profile_photo_url) {
-            const profilePhoto = document.createElement('img');
-            profilePhoto.src = review.profile_photo_url;
-            profilePhoto.alt = 'Profile photo';
-            profilePhoto.className = 'w-10 h-10 rounded-full mb-2';
-            authorContainer.appendChild(profilePhoto);
+              const authorContainer = document.createElement('div');
+              authorContainer.className = 'flex flex-col items-center mb-2';
+  
+              if (review.profile_photo_url) {
+                const profilePhoto = document.createElement('img');
+                profilePhoto.src = review.profile_photo_url;
+                profilePhoto.alt = 'Profile photo';
+                profilePhoto.className = 'w-10 h-10 rounded-full mb-2';
+                authorContainer.appendChild(profilePhoto);
+              }
+  
+              const author = document.createElement('h3');
+              author.className = 'text-xl font-semibold text-gray-700 text-center';
+              author.textContent = review.author_name;
+  
+              authorContainer.appendChild(author);
+  
+              const rating = document.createElement('div');
+              rating.className = 'text-yellow-500 mb-2 text-center';
+              rating.textContent = '★'.repeat(review.rating);
+  
+              const date = document.createElement('div');
+              date.className = 'text-gray-500 mb-2 text-center text-sm';
+              date.textContent = new Date(review.time * 1000).toLocaleDateString();
+  
+              const text = document.createElement('p');
+              text.className = 'text-gray-600 mb-4 break-words overflow-hidden';
+              text.style.maxHeight = '6rem';
+              text.textContent = review.text;
+  
+              reviewDiv.appendChild(authorContainer);
+              reviewDiv.appendChild(rating);
+              reviewDiv.appendChild(date);
+              reviewDiv.appendChild(text);
+  
+              reviewsContainer.appendChild(reviewDiv);
+            });
           }
-  
-          const author = document.createElement('h3');
-          author.className = 'text-xl font-semibold text-gray-700 text-center';
-          author.textContent = review.author_name;
-  
-          authorContainer.appendChild(author);
-  
-          const rating = document.createElement('div');
-          rating.className = 'text-yellow-500 mb-2 text-center';
-          rating.textContent = '★'.repeat(review.rating);
-  
-          const date = document.createElement('div');
-          date.className = 'text-gray-500 mb-2 text-center text-sm';
-          date.textContent = new Date(review.time * 1000).toLocaleDateString();
-  
-          const text = document.createElement('p');
-          text.className = 'text-gray-600 mb-4 break-words overflow-hidden';
-          text.style.maxHeight = '6rem';
-          text.textContent = review.text;
-  
-          reviewDiv.appendChild(authorContainer);
-          reviewDiv.appendChild(rating);
-          reviewDiv.appendChild(date);
-          reviewDiv.appendChild(text);
-  
-          reviewsContainer.appendChild(reviewDiv);
-        });
+        } else {
+          console.error('Failed to retrieve place details:', status);
+        }
       }
-    });
-  };
-  
+    );
+  };  
+
   return (
     <div className='relative'>
       <div className="font-sans overflow-x-hidden">
@@ -224,7 +231,22 @@ const LandingPage = () => {
               <div className="md:w-1/2 relative flex justify-center md:justify-end">
                 <img src={rectangle1} alt="Rectangle 1" className="absolute left-20 md:w-2/3 transform translate-x-10 translate-y-10 z-0" />
                 <img src={ellipse1} alt="Ellipse 1" className="absolute bottom-10 right-10 md:w-1/3 transform translate-x-10 translate-y-10 z-0" />
-                <motion.img src={doctors[currentDoctor].image} alt="doctor" className="relative mr-20 top-6 z-10 w-2/3" animate={controls} initial={{ opacity: 0 }} />
+                <div className="relative mr-20 top-6 z-10 w-2/3">
+                  <Swiper
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    autoplay={{ delay: 2000 }}
+                    loop={true}
+                    centeredSlides={true}
+                    modules={[Autoplay]}
+                  >
+                    {doctors.map((doctor, index) => (
+                      <SwiperSlide key={index}>
+                        <img src={doctor.image} alt={`Doctor ${index}`} className="w-full h-auto transition-transform duration-300 transform hover:scale-110" />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
               </div>
             </div>
           </section>
@@ -459,13 +481,37 @@ const LandingPage = () => {
         </section>
         
         <Element name="activity">
-          <section id="activity" className=" cursor-pointer container mx-auto py-16 px-4 text-left overflow-y-auto max-h-screen">
+          <section id="activity" className="cursor-pointer container mx-auto py-16 px-4 text-left overflow-y-auto max-h-screen">
             <div className="mt-5 space-y-8">
               <div className="flex items-start bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-103 hover:shadow-2xl">
-                  <video src={istanayatim} width="300" height="100" autoPlay loop muted className='rounded-lg' />
-                <div className='ml-10'>
-                  <h3 className="text-xl font-semibold text-gray-700">Yanda Dental Care Mengadakan Program Perawatan Gigi dan Mulut Gratis di Panti Asuhan Istana Yatim</h3>
-                  <p className="text-gray-600 mt-2">Yanda Dental Care mengadakan program perawatan gigi dan mulut gratis untuk anak-anak di Panti Asuhan Istana Yatim, sebagai bagian dari komitmen kami untuk memberikan kontribusi positif kepada masyarakat. Program ini mencakup pemeriksaan gigi rutin, pembersihan gigi, penambalan gigi, serta edukasi tentang pentingnya menjaga kesehatan gigi dan mulut, yang semuanya dilakukan oleh tim profesional kami. Dengan dukungan donatur dan relawan, kami berharap dapat meningkatkan kesehatan gigi anak-anak yatim piatu, menghindarkan mereka dari masalah gigi, dan memberikan mereka senyum yang sehat dan indah.</p>
+                <Swiper
+                  spaceBetween={10}
+                  slidesPerView={1}
+                  pagination={{ clickable: true }}
+                  autoplay={{ delay: 2000 }}
+                  loop={true}
+                  centeredSlides={true}
+                  modules={[Pagination, Autoplay]}
+                  className="w-full"
+                >
+                  <SwiperSlide>
+                    <img src={istanayatim} width="300" height="100" className="rounded-lg" alt="Image 1" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={istanayatim2} width="300" height="100" className="rounded-lg" alt="Image 2" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={istanayatim3} width="300" height="100" className="rounded-lg" alt="Image 3" />
+                  </SwiperSlide>
+                  {/* Add more SwiperSlide components as needed */}
+                </Swiper>
+                <div className="ml-10">
+                  <h3 className="text-xl font-semibold text-gray-700">
+                    Yanda Dental Care Mengadakan Program Perawatan Gigi dan Mulut Gratis di Panti Asuhan Istana Yatim
+                  </h3>
+                  <p className="text-gray-600 mt-2">
+                    Yanda Dental Care mengadakan program perawatan gigi dan mulut gratis untuk anak-anak di Panti Asuhan Istana Yatim, sebagai bagian dari komitmen kami untuk memberikan kontribusi positif kepada masyarakat. Program ini mencakup pemeriksaan gigi rutin, pembersihan gigi, penambalan gigi, serta edukasi tentang pentingnya menjaga kesehatan gigi dan mulut, yang semuanya dilakukan oleh tim profesional kami. Dengan dukungan donatur dan relawan, kami berharap dapat meningkatkan kesehatan gigi anak-anak yatim piatu, menghindarkan mereka dari masalah gigi, dan memberikan mereka senyum yang sehat dan indah.
+                  </p>
                 </div>
               </div>
             </div>
