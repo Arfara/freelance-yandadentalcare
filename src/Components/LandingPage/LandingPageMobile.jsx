@@ -1,5 +1,9 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination, Autoplay } from 'swiper/modules';
 import Home from '../../Home';
 import bumpervideo from '../Assets/bumpervideo.mp4';
 import logo1 from '../Assets/logo_1.svg';
@@ -15,6 +19,8 @@ import dokprima from '../Assets/dokprima.svg';
 import dokstephanie from '../Assets/dokstephanie.svg';
 import dokyonna from '../Assets/dokyonna.svg';
 import istanayatim from '../Assets/istanayatim.jpg';
+import istanayatim2 from '../Assets/istanayatim2.jpg';
+import istanayatim3 from '../Assets/istanayatim3.jpg';
 import wa from '../Assets/WhatsApp_icon.png';
 import pem_gigi_dewasa from '../Assets/pem_gigi_dewasa.jpeg';
 import pem_gigi_anak from '../Assets/pem_gigi_anak.jpg';
@@ -110,23 +116,6 @@ const LandingPageMobile = () => {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
   const controls = useAnimation();
 
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      controls.start({
-        opacity: 0,
-        transition: { duration: 0.5 },
-      }).then(() => {
-        setCurrentDoctor((prevDoctor) => (prevDoctor + 1) % doctors.length);
-        controls.start({
-          opacity: 1,
-          transition: { duration: 0.5 },
-        });
-      });
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [controls]);
-
   useEffect(() => {
     const script = document.createElement('script');
     script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&libraries=places`;    script.async = true;
@@ -196,7 +185,6 @@ const LandingPageMobile = () => {
     });
   };
   
-
   return (
     <div className="font-sans relative">
       <div
@@ -230,15 +218,41 @@ const LandingPageMobile = () => {
         <section id="home" className="bg-gray-100 py-8 relative">
           <div className="container mx-auto flex flex-col items-center">
             <div className="text-center">
-              {/* Logo */}
               <div className="flex items-center mb-4">
-                <video src={bumpervideo} width="1000" height="800" autoPlay loop muted />
+                <video src={bumpervideo} className="w-full h-auto" autoPlay loop muted />
               </div>
             </div>
-            <div className="relative flex flex-col items-center">
-              <img src={rectangle1} alt="Rectangle 1" className="absolute top-10 left-15 w-2/3"/>
-              <img src={ellipse1} alt="Ellipse 1" className="absolute bottom-0 right-0 w-1/3"/>
-              <motion.img src={doctors[currentDoctor].image} alt="doctor" className="top-8 relative w-2/3" animate={controls} initial={{ opacity: 0 }}/>
+            <div className="relative flex flex-col items-center w-full">
+              <img
+                src={rectangle1}
+                alt="Rectangle 1"
+                className="absolute left-1/2 transform -translate-x-1/2 top-10 w-2/3 md:w-1/2 lg:w-1/3 z-0"
+              />
+              <img
+                src={ellipse1}
+                alt="Ellipse 1"
+                className="absolute z-0 bottom-0 right-0 w-1/3"
+              />
+              <div className="relative z-0 w-2/3 mt-7">
+                <Swiper
+                  spaceBetween={10}
+                  slidesPerView={1}
+                  autoplay={{ delay: 2000 }}
+                  loop={true}
+                  centeredSlides={true}
+                  modules={[Autoplay]}
+                >
+                  {doctors.map((doctor, index) => (
+                    <SwiperSlide key={index}>
+                      <img
+                        src={doctor.image}
+                        alt={`Doctor ${index}`}
+                        className="w-full h-auto transition-transform duration-300 transform hover:scale-110"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
             </div>
           </div>
         </section>
@@ -465,18 +479,35 @@ const LandingPageMobile = () => {
           <h2 className="text-3xl font-bold text-gray-700 text-center">Aktivitas Kami</h2>
         </section>
 
-        <section id="activity" className="container mx-auto py-16 px-4 text-left overflow-y-auto max-h-screen">
-          <div className="space-y-8">
-            <div className="bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-103 hover:shadow-2xl">
-              <div className="flex justify-center">
-                <video src={istanayatim} width="300" height="100" autoPlay loop muted className="rounded-lg" />
-              </div>
-              <div className="mt-5">
-                <h3 className="text-center text-xl font-semibold text-gray-700">
+        <section id="activity" className="cursor-pointer container mx-auto py-16 px-4 text-center overflow-y-auto max-h-screen">
+          <div className="flex flex-col items-center space-y-8">
+            <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-103 hover:shadow-2xl w-full md:w-3/4 lg:w-1/2">
+              <Swiper
+                spaceBetween={10}
+                slidesPerView={1}
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 2000 }}
+                loop={true}
+                centeredSlides={true}
+                modules={[Pagination, Autoplay]}
+                className="w-full mb-6 mt-5"
+              >
+                <SwiperSlide>
+                  <img src={istanayatim} width="300" height="100" className="rounded-lg mx-auto" alt="Image 1" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src={istanayatim2} width="300" height="100" className="rounded-lg mx-auto" alt="Image 2" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src={istanayatim3} width="300" height="100" className="rounded-lg mx-auto" alt="Image 3" />
+                </SwiperSlide>
+              </Swiper>
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-gray-700">
                   Yanda Dental Care Mengadakan Program Perawatan Gigi dan Mulut Gratis di Panti Asuhan Istana Yatim
                 </h3>
-                <p className="text-center text-gray-600 mt-2">
-                  Yanda Dental Care dengan bangga mengadakan program perawatan gigi dan mulut gratis untuk anak-anak di Panti Asuhan Istana Yatim, sebagai bagian dari komitmen kami untuk memberikan kontribusi positif kepada masyarakat. Program ini mencakup pemeriksaan gigi rutin, pembersihan gigi, penambalan gigi, serta edukasi tentang pentingnya menjaga kesehatan gigi dan mulut, yang semuanya dilakukan oleh tim profesional kami. Dengan dukungan donatur dan relawan, kami berharap dapat meningkatkan kesehatan gigi anak-anak yatim piatu, menghindarkan mereka dari masalah gigi, dan memberikan mereka senyum yang sehat dan indah.
+                <p className="text-gray-600 mt-2">
+                  Yanda Dental Care mengadakan program perawatan gigi dan mulut gratis untuk anak-anak di Panti Asuhan Istana Yatim, sebagai bagian dari komitmen kami untuk memberikan kontribusi positif kepada masyarakat. Program ini mencakup pemeriksaan gigi rutin, pembersihan gigi, penambalan gigi, serta edukasi tentang pentingnya menjaga kesehatan gigi dan mulut, yang semuanya dilakukan oleh tim profesional kami. Dengan dukungan donatur dan relawan, kami berharap dapat meningkatkan kesehatan gigi anak-anak yatim piatu, menghindarkan mereka dari masalah gigi, dan memberikan mereka senyum yang sehat dan indah.
                 </p>
               </div>
             </div>

@@ -121,10 +121,10 @@ const LandingPage = () => {
       script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&libraries=places`;
       script.async = true;
       script.defer = true;
-      script.onload = () => window.initMap(); // Change here to call initMap on window object
+      script.onload = () => window.initMap();
       document.body.appendChild(script);
     } else {
-      window.initMap(); // Change here to call initMap on window object
+      window.initMap();
     }
   }, []);
   
@@ -503,7 +503,6 @@ const LandingPage = () => {
                   <SwiperSlide>
                     <img src={istanayatim3} width="300" height="100" className="rounded-lg" alt="Image 3" />
                   </SwiperSlide>
-                  {/* Add more SwiperSlide components as needed */}
                 </Swiper>
                 <div className="ml-10">
                   <h3 className="text-xl font-semibold text-gray-700">
