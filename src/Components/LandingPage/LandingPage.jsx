@@ -9,7 +9,7 @@ import bumpervideo from '../Assets/bumpervideo.mp4';
 import logo1 from '../Assets/logo_1.svg';
 import rectangle1 from '../Assets/Rectangle1.svg';
 import ellipse1 from '../Assets/Ellipse1.svg';
-import dokvector1 from '../Assets/dokvector1.svg';
+import dokvector1 from '../Assets/dokvector1.jpg';
 import dokyanda from '../Assets/dokyanda.svg';
 import doktasya from '../Assets/doktsaya.svg';
 import dokdannyar from '../Assets/dokdannyar.svg';
@@ -208,8 +208,8 @@ const LandingPage = () => {
     <div className='relative'>
       <div className="font-sans overflow-x-hidden">
         <header className="bg-gray-900 text-white">
-          <div className="container mx-auto flex justify-between items-center py-8 px-4">
-            <img src={logo1} className='w-32'></img>
+          <div className="container mx-auto flex justify-between items-center py-6 px-4">
+            <img src={logo1} className="w-20 transform scale-150 ml-4" alt="Logo" />
             <div className="text-2xl font-bold text-gray-800"></div>
             <div className="space-x-4">
               <Link to="home" smooth={true} duration={500} className="cursor-pointer text-white hover:text-yellow-500">Home</Link>

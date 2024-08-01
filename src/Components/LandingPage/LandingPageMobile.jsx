@@ -9,7 +9,7 @@ import bumpervideo from '../Assets/bumpervideo.mp4';
 import logo1 from '../Assets/logo_1.svg';
 import rectangle1 from '../Assets/Rectangle1.svg';
 import ellipse1 from '../Assets/Ellipse1.svg';
-import dokvector1 from '../Assets/dokvector1.svg';
+import dokvector1 from '../Assets/dokvector1.jpg';
 import dokyanda from '../Assets/dokyanda.svg';
 import doktasya from '../Assets/doktsaya.svg';
 import dokdannyar from '../Assets/dokdannyar.svg';
@@ -205,7 +205,7 @@ const LandingPageMobile = () => {
       </div>
 
       <header className="bg-gray-900 text-white flex items-center justify-between p-4 fixed top-0 left-0 right-0 z-10">
-        <img src={logo1} className='w-20' alt="Logo"/>
+        <img src={logo1} className="w-20 transform scale-150 ml-4" alt="Logo" />
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
           className="text-white text-2xl lg:hidden"
@@ -213,6 +213,7 @@ const LandingPageMobile = () => {
           &#9776;
         </button>
       </header>
+
 
       <div className="pt-16">
         <section id="home" className="bg-gray-100 py-8 relative">
