@@ -608,27 +608,21 @@ const LandingPage = () => {
                   <SwiperSlide>
                     <img
                       src={istanayatim}
-                      width="300"
-                      height="100"
-                      className="rounded-lg"
+                      className="w-full h-48 md:h-64 lg:h-80 object-cover rounded-lg"
                       alt="Image 1"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <img
                       src={istanayatim2}
-                      width="300"
-                      height="100"
-                      className="rounded-lg"
+                      className="w-full h-48 md:h-64 lg:h-80 object-cover rounded-lg"
                       alt="Image 2"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <img
                       src={istanayatim3}
-                      width="300"
-                      height="100"
-                      className="rounded-lg"
+                      className="w-full h-48 md:h-64 lg:h-80 object-cover rounded-lg"
                       alt="Image 3"
                     />
                   </SwiperSlide>
