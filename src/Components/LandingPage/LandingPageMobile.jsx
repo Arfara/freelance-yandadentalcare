@@ -205,7 +205,7 @@ const LandingPageMobile = () => {
         <meta name="keywords" content="pembersihan karang gigi,  pencabutan gigi, dental jakarta garden city, klinik gigi cakung, klinik gigi jakarta timur, dokter gigi jakarta timur, perawatan gigi berlubang, cabut gigi terdekat,  dokter gigi terdekat, pasang gigi palsu terdekat, klinik gigi terdekat, dental clinic terdekat, klinik cabut gigi terdekat,  ahli gigi terdekat, dental terdekat, dokter gigi sekitar sini, dokter gigi orthodontist terdekat, pasang behel terdekat, tambal gigi terdekat, dental klinik terdekat. " />
         <meta property="og:title" content="Home - Yanda Dental Care" />
         <meta property="og:description" content="Selamat datang di Yanda Dental Care, Klinik Gigi Berkualitas dengan Dokter Profesional" />
-        <meta property="og:image" content="" />
+        <meta property="og:image" content="https://yandadentalcare.id/static/media/dokyanda.bf1f29ee9b78339d63007430d49361f4.svg" />
         <meta property="og:url" content="https://yandadentalcare.id/" />
       </Helmet>
       <div
@@ -226,7 +226,7 @@ const LandingPageMobile = () => {
       </div>
 
       <header className="bg-gray-900 text-white flex items-center justify-between p-4 fixed top-0 left-0 right-0 z-20">
-        <img src={logo1} className="w-20 transform scale-150 ml-4" alt="Logo" />
+        <img src={logo1} className="w-20 transform scale-150 ml-4 cursor-pointer" alt="Logo" />
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
           className="text-white text-2xl lg:hidden"
