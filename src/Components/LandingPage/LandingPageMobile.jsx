@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
+import { Helmet } from 'react-helmet';
 import Home from '../../Home';
 import bumpervideo from '../Assets/bumpervideo.mp4';
 import logo1 from '../Assets/logo_1.svg';
@@ -198,6 +199,15 @@ const LandingPageMobile = () => {
   
   return (
     <div className="font-sans relative">
+      <Helmet>
+        <title>Yanda Dental Care - Klinik Gigi Berkualitas dengan Fasilitas Modern</title>
+        <meta name="description" content="Yanda Dental Care berlokasi di Jakarta Garden City, Cakung, Jakarta Timur, menyediakan layanan perawatan gigi yang murah dan berkualitas dengan fasilitas modern. Kunjungi kami untuk pengalaman perawatan gigi terbaik." />
+        <meta name="keywords" content="pembersihan karang gigi,  pencabutan gigi, dental jakarta garden city, klinik gigi cakung, klinik gigi jakarta timur, dokter gigi jakarta timur, perawatan gigi berlubang, cabut gigi terdekat,  dokter gigi terdekat, pasang gigi palsu terdekat, klinik gigi terdekat, dental clinic terdekat, klinik cabut gigi terdekat,  ahli gigi terdekat, dental terdekat, dokter gigi sekitar sini, dokter gigi orthodontist terdekat, pasang behel terdekat, tambal gigi terdekat, dental klinik terdekat. " />
+        <meta property="og:title" content="Home - Yanda Dental Care" />
+        <meta property="og:description" content="Selamat datang di Yanda Dental Care, Klinik Gigi Berkualitas dengan Dokter Profesional" />
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="https://yandadentalcare.id/" />
+      </Helmet>
       <div
         className={`rounded-lg p-10 fixed top-0 right-0 bg-gray-900 text-white transform ${
           sidebarOpen ? 'translate-x-0' : 'translate-x-full'

@@ -223,7 +223,7 @@ const LandingPage = () => {
         <meta name="keywords" content="pembersihan karang gigi,  pencabutan gigi, dental jakarta garden city, klinik gigi cakung, klinik gigi jakarta timur, dokter gigi jakarta timur, perawatan gigi berlubang, cabut gigi terdekat,  dokter gigi terdekat, pasang gigi palsu terdekat, klinik gigi terdekat, dental clinic terdekat, klinik cabut gigi terdekat,  ahli gigi terdekat, dental terdekat, dokter gigi sekitar sini, dokter gigi orthodontist terdekat, pasang behel terdekat, tambal gigi terdekat, dental klinik terdekat. " />
         <meta property="og:title" content="Home - Yanda Dental Care" />
         <meta property="og:description" content="Selamat datang di Yanda Dental Care, Klinik Gigi Berkualitas dengan Dokter Profesional" />
-        <meta property="og:image" content="https://example.com/image.jpg" />
+        <meta property="og:image" content="" />
         <meta property="og:url" content="https://yandadentalcare.id/" />
       </Helmet>
       <div className="font-sans overflow-x-hidden">
