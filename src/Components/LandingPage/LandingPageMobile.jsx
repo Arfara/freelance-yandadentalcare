@@ -201,7 +201,7 @@ const LandingPageMobile = () => {
     <div className="font-sans relative">
       <Helmet>
         <title>Yanda Dental Care - Klinik Gigi Jakarta</title>
-        <meta name="description" content="Yanda Dental Care berlokasi di Jakarta Garden City, Cakung, Jakarta Timur, menyediakan layanan perawatan gigi yang murah dan berkualitas dengan fasilitas modern. Kunjungi kami untuk pengalaman perawatan gigi terbaik." />
+        <meta name="description" content="Yanda Dental Care berada Jakarta Garden City, Cakung. Layanan gigi murah, profesional, berkualitas, dengan fasilitas modern untuk perawatan gigi terbaik" />
         <meta name="keywords" content="pembersihan karang gigi,  pencabutan gigi, dental jakarta garden city, klinik gigi cakung, klinik gigi jakarta timur, dokter gigi jakarta timur, perawatan gigi berlubang, cabut gigi terdekat,  dokter gigi terdekat, pasang gigi palsu terdekat, klinik gigi terdekat, dental clinic terdekat, klinik cabut gigi terdekat,  ahli gigi terdekat, dental terdekat, dokter gigi sekitar sini, dokter gigi orthodontist terdekat, pasang behel terdekat, tambal gigi terdekat, dental klinik terdekat. " />
         <meta property="og:title" content="Home - Yanda Dental Care" />
         <meta property="og:description" content="Selamat datang di Yanda Dental Care, Klinik Gigi Berkualitas dengan Dokter Profesional" />
@@ -291,26 +291,26 @@ const LandingPageMobile = () => {
                 <ul className="mt-6 space-y-4">
                   <li className="flex flex-col items-start">
                     <div className="bg-gray-100 border-b-4 border-yellow-500 shadow-md rounded-lg p-4 flex-1 w-full">
-                      <h4 className="text-gray-800 font-bold text-lg">
+                      <h2 className="text-gray-800 font-bold text-lg">
                         Profesional
-                      </h4>
-                      <p className="text-gray-600 text-sm">Memberikan layanan medis dengan keahlian dan standar tinggi untuk hasil yang optimal.</p>
+                      </h2>
+                      <p className="text-gray-600 text-sm">Yanda Dental Care memberikan layanan medis dengan keahlian dan standar tinggi untuk hasil yang optimal.</p>
                     </div>
                   </li>
                   <li className="flex flex-col items-start mt-4">
                     <div className="bg-gray-100 border-b-4 border-yellow-500 shadow-md rounded-lg p-4 flex-1 w-full">
-                      <h4 className="text-gray-800 font-bold text-lg">
+                      <h2 className="text-gray-800 font-bold text-lg">
                         Mengutamakan Keluhan, kebutuhan, dan kepentingan pasien
-                      </h4>
-                      <p className="text-gray-600 text-sm">Memprioritaskan setiap aspek kebutuhan pasien untuk perawatan yang lebih personal dan efektif.</p>
+                      </h2>
+                      <p className="text-gray-600 text-sm">Yanda Dental Care memprioritaskan setiap aspek kebutuhan pasien untuk perawatan yang lebih personal dan efektif.</p>
                     </div>
                   </li>
                   <li className="flex flex-col items-start mt-4">
                     <div className="bg-gray-100 border-b-4 border-yellow-500 shadow-md rounded-lg p-4 flex-1 w-full">
-                      <h4 className="text-gray-800 font-bold text-lg">
+                      <h2 className="text-gray-800 font-bold text-lg">
                         Memberikan pengalaman perawatan gigi yang menyenangkan
-                      </h4>
-                      <p className="text-gray-600 text-sm">Menciptakan suasana yang nyaman dan menyenangkan untuk pengalaman perawatan yang lebih baik.</p>
+                      </h2>
+                      <p className="text-gray-600 text-sm">Yanda Dental Care menciptakan suasana yang nyaman dan menyenangkan untuk pengalaman perawatan yang lebih baik.</p>
                     </div>
                   </li>
                 </ul>
@@ -321,7 +321,7 @@ const LandingPageMobile = () => {
 
         <section id="clinic-photos" className="py-16 bg-white relative">
             <div className="container mx-auto text-center px-4 relative z-10">
-              <h2 className="text-3xl font-bold text-gray-700 mb-12">Kondisi Klinik Kami</h2>
+              <h1 className="text-3xl font-bold text-gray-700 mb-12">Yanda Dental Care</h1>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center px-6">
                 {/* Card 1 */}
                 <div className="relative overflow-hidden rounded-lg shadow-lg mx-2 aspect-w-3 aspect-h-4">
@@ -400,7 +400,7 @@ const LandingPageMobile = () => {
 
         <section id="services" className="bg-white-100 py-16">
             <div className="container mx-auto px-6 text-center">
-                <h2 className="text-3xl font-bold text-gray-700">Layanan Kami</h2>
+                <h1 className="text-3xl font-bold text-gray-700">Layanan di Yanda Dental Care</h1>
                 <div className="overflow-x-auto">
                     <div className="flex space-x-6 overflow-x-auto py-8 px-8">
                         <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
@@ -543,8 +543,8 @@ const LandingPageMobile = () => {
 
         <section id="dentist" className="bg-white-100">
           <div className="container mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold text-gray-700 mb-5">Dokter Gigi Kami</h2>
-            <h3 className="text-gray-700 mb-12">Klik jadwal dokter untuk reservasi</h3>
+            <h1 className="text-3xl font-bold text-gray-700 mb-5">Dokter Gigi Yanda Dental Care</h1>
+            <h2 className="text-gray-700 mb-12">Klik jadwal dokter untuk reservasi</h2>
             <div className="overflow-x-auto">
               <div className="flex space-x-6 overflow-x-auto py-8 px-8">
                 {doctors.map((doctor, index) => {
