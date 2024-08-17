@@ -14,7 +14,7 @@ import dokyanda from '../Assets/dokyanda.svg';
 import doktasya from '../Assets/doktsaya.svg';
 import dokdannyar from '../Assets/dokdannyar.svg';
 import dokdewi from '../Assets/dokdewi.svg';
-import dokjanet from '../Assets/dokjanet.svg';
+import dokjanet from '../Assets/dokjanet.png';
 import dokprima from '../Assets/dokprima.svg';
 import dokstephanie from '../Assets/dokstephanie.svg';
 import dokyonna from '../Assets/dokyonna.svg';
@@ -40,19 +40,29 @@ import crown from '../Assets/crown.jpg';
 import bridge from '../Assets/bridge.jpg';
 import direct_veneer from '../Assets/direct_veneer.jpg';
 import indirect_veneer from '../Assets/indirect_veneer.jpg';
+import cabut_gigi_anak from '../Assets/cabut_gigi_anak.jpg';
+import donor_darah from '../Assets/donor_darah.jpg';
+import nobar_timnas from '../Assets/nobar_timnas.jpg';
+import klinik1 from '../Assets/klinik1.png';
+import klinik2 from '../Assets/klinik2.png';
+import klinik3 from '../Assets/klinik3.png';
+import klinik4 from '../Assets/klinik4.png';
+import klinik5 from '../Assets/klinik5.png';
+import klinik6 from '../Assets/klinik6.png';
+import fluid1 from '../Assets/fluid1.png';
 
 const doctors = [
   {
     image: dokyanda,
     name: 'drg. Yanda',
-    description: 'Senin, Rabu, Jumat : 15.00 - 20.00 Kamis: 09.00 - 15.00',
+    description: 'Senin, Rabu : 15.00 - 20.00 Kamis: 09.00 - 15.00',
     phoneNumber: '+6285935000090', 
     message: 'Halo Admin Yanda Dental Care 😊, saya ingin menanyakan tentang jadwal Dokter Yanda'
   },
   {
     image: doktasya,
     name: 'drg. Tasya',
-    description: 'Kamis: 15.00 - 20.00',
+    description: 'Jumat: 15.00 - 20.00',
     phoneNumber: '+6285935000090', 
     message: 'Halo Admin Yanda Dental Care 😊, saya ingin menanyakan tentang jadwal Dokter Tasya'
   },
@@ -106,11 +116,12 @@ const doctors = [
   {
     image: dokyonna,
     name: 'drg. Yonna',
-    description: 'Minggu: 15.00 - 20.00',
+    description: 'Kamis: 15.00 - 20.00',
     phoneNumber: '+6285935000090', 
     message: 'Halo Admin Yanda Dental Care 😊, saya ingin menanyakan tentang jadwal Dokter Yonna'
   }
 ];
+
 const LandingPageMobile = () => {
   const [currentDoctor, setCurrentDoctor] = React.useState(0);
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
@@ -204,7 +215,7 @@ const LandingPageMobile = () => {
         </nav>
       </div>
 
-      <header className="bg-gray-900 text-white flex items-center justify-between p-4 fixed top-0 left-0 right-0 z-10">
+      <header className="bg-gray-900 text-white flex items-center justify-between p-4 fixed top-0 left-0 right-0 z-20">
         <img src={logo1} className="w-20 transform scale-150 ml-4" alt="Logo" />
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -258,7 +269,7 @@ const LandingPageMobile = () => {
           </div>
         </section>
 
-        <section id="about" className="py-16 px-4 bg-gray-100">
+        <section id="about" className="py-16 px-4 bg-white-100">
           <div className="container mx-auto text-center">
             <div className="flex flex-col md:flex-row items-center mt-8 justify-center">
               <div className="md:w-1/3 mb-8 md:mb-0">
@@ -299,143 +310,229 @@ const LandingPageMobile = () => {
           </div>
         </section>
 
-        <section id="services" className="bg-gray-100 py-16">
-          <div className="container mx-auto px-6 text-center">
-              <h2 className="text-3xl font-bold text-gray-700 mb-12">Layanan Kami</h2>
-              <div className="overflow-x-auto">
-                  <div className="flex space-x-6 overflow-x-auto py-8 px-8">
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={pem_gigi_dewasa} alt="Perawatan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Pembersihan Gigi Dewasa</h3>
-                          <p className="text-gray-600 mb-4 break-words">Perawatan ini membantu menghilangkan plak, tartar, dan mencegah masalah gigi serta gusi.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.50k*</a>
-                      </div>
-
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={pem_gigi_anak} alt="Perawatan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Perawatan Gigi Anak</h3>
-                          <p className="text-gray-600 mb-4 break-words">Perawatan khusus untuk anak-anak yang menjaga kesehatan gigi mereka dengan metode yang lembut dan menyenangkan, memastikan gigi mereka tumbuh sehat.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.250k*</a>
-                      </div>
-                      
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={ortodonti} alt="Ortodonti" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Ortodonti</h3>
-                          <p className="text-gray-600 mb-4 break-words">Perawatan ortodonti untuk merapikan gigi dan rahang Anda, menggunakan alat seperti kawat gigi untuk hasil yang lebih baik dan senyum yang lebih proporsional.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.800k*</a>
-                      </div>
-                      
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={cabut_gigi} alt="Pencabutan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Pencabutan Gigi</h3>
-                          <p className="text-gray-600 mb-4 break-words">Cabut gigi adalah proses pengangkatan gigi dari soket gigi pada tulang rahang. Pasien yang mengalami nyeri dan tidak nyaman dengan pertumbuhan gigi menyimpang atau masalah gigi lainnya dapat mengambil tindakan ini.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.400k*</a>
-                      </div>
-                      
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={gigi_palsu} alt="Pembuatan Gigi Palsu" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Pembuatan Gigi Palsu</h3>
-                          <p className="text-gray-600 mb-4 break-words">Gigi palsu yang dibuat dengan presisi untuk memberikan kenyamanan dan fungsi seperti gigi asli, membantu Anda tersenyum dengan percaya diri.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.000k*</a>
-                      </div>
-
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={implan_gigi} alt="Pembuatan Gigi Palsu" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Implan Gigi</h3>
-                          <p className="text-gray-600 mb-4 break-words">Implan adalah akar gigi yang ditanamkan ke dalam rahang untuk menggantikan gigi yang copot. Terbuat dari titanium yang ringan, kuat, dan biokompatibel, implan gigi dapat diterima oleh tubuh.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.19.000k*</a>
-                      </div>
-                      
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={bleaching} alt="Bleaching" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Bleaching</h3>
-                          <p className="text-gray-600 mb-4 break-words">Prosedur pemutihan gigi untuk mencerahkan senyum Anda dengan aman, menghilangkan noda dan menjadikan gigi Anda lebih bersinar.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.50k*</a>
-                      </div>
-                      
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={akar_gigi} alt="Perawatan Saluran Akar" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Perawatan Saluran Akar</h3>
-                          <p className="text-gray-600 mb-4 break-words">Perawatan untuk mengatasi infeksi dalam saluran akar gigi, memberikan solusi jangka panjang untuk masalah gigi yang parah dan mengurangi rasa sakit.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.400k*</a>
-                      </div>
-
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={karang_gigi} alt="Pembersihan Karang Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Pembersihan Karang Gigi</h3>
-                          <p className="text-gray-600 mb-4 break-words">Proses pembersihan yang mendalam untuk menghilangkan karang gigi yang menumpuk, mencegah penyakit gusi dan menjaga kesehatan mulut Anda.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.150k*</a>
-                      </div>
-
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={tambal_gigi} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Penambalan Gigi</h3>
-                          <p className="text-gray-600 mb-4 break-words">Tambal gigi adalah prosedur yang dilakukan untuk mengisi celah pada gigi berlubang.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.350k*</a>
-                      </div>
-
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={gingivektomi} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Gingivektomi</h3>
-                          <p className="text-gray-600 mb-4 break-words">Gingivektomi adalah prosedur bedah untuk mengangkat gingiva atau jaringan gusi.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.475k*</a>
-                      </div>
-
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={retainer_gigi} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Retainer Permanen</h3>
-                          <p className="text-gray-600 mb-4 break-words">Retainer adalah alat untuk mempertahankan posisi gigi agar tetap rapi dan tidak kembali berantakan setelah lepas behel. Retainer gigi permanen terbuat dari kawat tebal yang dibuat sesuai bentuk gigi yang sudah rapi.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.1.425k*</a>
-                      </div>
-
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={retainer_remove} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Retainer Removable</h3>
-                          <p className="text-gray-600 mb-4 break-words">Retainer adalah alat untuk mempertahankan posisi gigi agar tetap rapi dan tidak kembali berantakan setelah lepas behel. Retainer Hawley terbuat dari kawat logam tipis dan akrilik yang dibentuk agar sesuai dengan langit-langit mulut pasien atau di sepanjang bagian dalam rahang bawah.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
-                      </div>
-
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={splinting} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Splinting Gigi</h3>
-                          <p className="text-gray-600 mb-4 break-words">Splinting gigi adalah prosedur untuk mengencangkan gigi-gigi yang goyang akibat trauma atau penyakit.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.380k*</a>
-                      </div>
-
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={crown} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Pemasangan Crown Gigi</h3>
-                          <p className="text-gray-600 mb-4 break-words">Dental crown atau crown gigi adalah sebuah proses pemasangan selubung gigi di atas gigi yang rusak.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
-                      </div>
-
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={bridge} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Pemasangan Bridge Gigi</h3>
-                          <p className="text-gray-600 mb-4 break-words">Dental bridge adalah salah satu perawatan yang digunakan untuk mengisi kekosongan pada gigi yang hilang dengan konsep 'jembatan'.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
-                      </div>
-
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={direct_veneer} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Direct Veneer</h3>
-                          <p className="text-gray-600 mb-4 break-words">Direct veneer adalah jenis veneer yang dipasang secara langsung pada pasien menggunakan bahan resin komposit.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.4.700k*</a>
-                      </div>
-
-                      <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                          <img src={indirect_veneer} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                          <h3 className="text-xl font-semibold text-gray-700 mb-2">Indirect Veneer</h3>
-                          <p className="text-gray-600 mb-4 break-words">
-                          Indirect veneer adalah jenis veneer yang umumnya terbuat dari bahan porcelain. Bahan yang satu ini cenderung lebih kuat dan hasilnya pun halus.</p>
-                          <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.15.000k*</a>
-                      </div>
+        <section id="clinic-photos" className="py-16 bg-white relative">
+            <div className="container mx-auto text-center px-4 relative z-10">
+              <h2 className="text-3xl font-bold text-gray-700 mb-12">Kondisi Klinik Kami</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center px-6">
+                {/* Card 1 */}
+                <div className="relative overflow-hidden rounded-lg shadow-lg mx-2 aspect-w-3 aspect-h-4">
+                  <img
+                    src={klinik1}
+                    alt="Klinik 1"
+                    className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-110 cursor-pointer"
+                  />
+                  <div className="absolute inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                    <span className="text-white text-lg font-semibold">Tampak Depan</span>
                   </div>
+                </div>
+                {/* Card 2 */}
+                <div className="relative overflow-hidden rounded-lg shadow-lg mx-2 aspect-w-3 aspect-h-4">
+                  <img
+                    src={klinik2}
+                    alt="Klinik 2"
+                    className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-110 cursor-pointer"
+                  />
+                  <div className="absolute inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                    <span className="text-white text-lg font-semibold">Ruang Perawatan</span>
+                  </div>
+                </div>
+                {/* Card 3 */}
+                <div className="relative overflow-hidden rounded-lg shadow-lg mx-2 aspect-w-3 aspect-h-4">
+                  <img
+                    src={klinik3}
+                    alt="Klinik 3"
+                    className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-110 cursor-pointer"
+                  />
+                  <div className="absolute inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                    <span className="text-white text-lg font-semibold">Fasilitas Modern</span>
+                  </div>
+                </div>
+                {/* Card 4 */}
+                <div className="relative overflow-hidden rounded-lg shadow-lg mx-2 aspect-w-3 aspect-h-4">
+                  <img
+                    src={klinik4}
+                    alt="Klinik 4"
+                    className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-110 cursor-pointer"
+                  />
+                  <div className="absolute inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                    <span className="text-white text-lg font-semibold">Ruang Tunggu</span>
+                  </div>
+                </div>
+                {/* Card 5 */}
+                <div className="relative overflow-hidden rounded-lg shadow-lg mx-2 aspect-w-3 aspect-h-4">
+                  <img
+                    src={klinik5}
+                    alt="Klinik 5"
+                    className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-110 cursor-pointer"
+                  />
+                  <div className="absolute inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                    <span className="text-white text-lg font-semibold">Resepsionis</span>
+                  </div>
+                </div>
+                {/* Card 6 */}
+                <div className="relative overflow-hidden rounded-lg shadow-lg mx-2 aspect-w-3 aspect-h-4">
+                  <img
+                    src={klinik6}
+                    alt="Klinik 6"
+                    className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-110 cursor-pointer"
+                  />
+                  <div className="absolute inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
+                    <span className="text-white text-lg font-semibold">Fasilitas Lengkap</span>
+                  </div>
+                </div>
               </div>
-          </div>
+            </div>
+            <img
+              src={fluid1}
+              alt="Decorative Background"
+              className="absolute top-40 right-0 transform -translate-x-1/2 -translate-y-1/2 h-auto object-contain opacity-20"
+            />
+          </section>
+
+        <section id="services" className="bg-white-100 py-16">
+            <div className="container mx-auto px-6 text-center">
+                <h2 className="text-3xl font-bold text-gray-700">Layanan Kami</h2>
+                <div className="overflow-x-auto">
+                    <div className="flex space-x-6 overflow-x-auto py-8 px-8">
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={pem_gigi_dewasa} alt="Perawatan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Konsultasi Gigi</h3>
+                            <p className="text-gray-600 mb-4 break-words">Perawatan ini membantu menghilangkan plak, tartar, dan mencegah masalah gigi serta gusi.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.50k*</a>
+                        </div>
+
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={pem_gigi_anak} alt="Perawatan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Penambalan Gigi Anak</h3>
+                            <p className="text-gray-600 mb-4 break-words">Perawatan khusus untuk anak-anak yang menjaga kesehatan gigi mereka dengan metode yang lembut dan menyenangkan, memastikan gigi mereka tumbuh sehat.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.285k*</a>
+                        </div>
+                        
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={cabut_gigi_anak} alt="Perawatan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Pecabutan Gigi Anak</h3>
+                            <p className="text-gray-600 mb-4 break-words">Perawatan khusus untuk anak-anak yang menjaga kesehatan gigi mereka dengan metode yang lembut dan menyenangkan, memastikan gigi mereka tumbuh sehat.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.190k*</a>
+                        </div>
+
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={ortodonti} alt="Ortodonti" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Ortodonti</h3>
+                            <p className="text-gray-600 mb-4 break-words">Perawatan ortodonti untuk merapikan gigi dan rahang Anda, menggunakan alat seperti kawat gigi untuk hasil yang lebih baik dan senyum yang lebih proporsional.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.800k*</a>
+                        </div>
+                        
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={cabut_gigi} alt="Pencabutan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Pencabutan Gigi</h3>
+                            <p className="text-gray-600 mb-4 break-words">Cabut gigi adalah proses pengangkatan gigi dari soket gigi pada tulang rahang. Pasien yang mengalami nyeri dan tidak nyaman dengan pertumbuhan gigi menyimpang atau masalah gigi lainnya dapat mengambil tindakan ini.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.400k*</a>
+                        </div>
+                        
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={gigi_palsu} alt="Pembuatan Gigi Palsu" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Pembuatan Gigi Palsu</h3>
+                            <p className="text-gray-600 mb-4 break-words">Gigi palsu yang dibuat dengan presisi untuk memberikan kenyamanan dan fungsi seperti gigi asli, membantu Anda tersenyum dengan percaya diri.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.000k*</a>
+                        </div>
+
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={implan_gigi} alt="Pembuatan Gigi Palsu" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Implan Gigi</h3>
+                            <p className="text-gray-600 mb-4 break-words">Implan adalah akar gigi yang ditanamkan ke dalam rahang untuk menggantikan gigi yang copot. Terbuat dari titanium yang ringan, kuat, dan biokompatibel, implan gigi dapat diterima oleh tubuh.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.19.000k*</a>
+                        </div>
+                        
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={bleaching} alt="Bleaching" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Bleaching</h3>
+                            <p className="text-gray-600 mb-4 break-words">Prosedur pemutihan gigi untuk mencerahkan senyum Anda dengan aman, menghilangkan noda dan menjadikan gigi Anda lebih bersinar.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.999k*</a>
+                        </div>
+                        
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={akar_gigi} alt="Perawatan Saluran Akar" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Perawatan Saluran Akar</h3>
+                            <p className="text-gray-600 mb-4 break-words">Perawatan untuk mengatasi infeksi dalam saluran akar gigi, memberikan solusi jangka panjang untuk masalah gigi yang parah dan mengurangi rasa sakit.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.400k*</a>
+                        </div>
+
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={karang_gigi} alt="Pembersihan Karang Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Pembersihan Karang Gigi</h3>
+                            <p className="text-gray-600 mb-4 break-words">Proses pembersihan yang mendalam untuk menghilangkan karang gigi yang menumpuk, mencegah penyakit gusi dan menjaga kesehatan mulut Anda.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.150k*</a>
+                        </div>
+
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={tambal_gigi} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Penambalan Gigi</h3>
+                            <p className="text-gray-600 mb-4 break-words">Tambal gigi adalah prosedur yang dilakukan untuk mengisi celah pada gigi berlubang.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.350k*</a>
+                        </div>
+
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={gingivektomi} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Gingivektomi</h3>
+                            <p className="text-gray-600 mb-4 break-words">Gingivektomi adalah prosedur bedah untuk mengangkat gingiva atau jaringan gusi.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.475k*</a>
+                        </div>
+
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={retainer_gigi} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Retainer Permanen</h3>
+                            <p className="text-gray-600 mb-4 break-words">Retainer adalah alat untuk mempertahankan posisi gigi agar tetap rapi dan tidak kembali berantakan setelah lepas behel. Retainer gigi permanen terbuat dari kawat tebal yang dibuat sesuai bentuk gigi yang sudah rapi.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.1.425k*</a>
+                        </div>
+
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={retainer_remove} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Retainer Removable</h3>
+                            <p className="text-gray-600 mb-4 break-words">Retainer adalah alat untuk mempertahankan posisi gigi agar tetap rapi dan tidak kembali berantakan setelah lepas behel. Retainer Hawley terbuat dari kawat logam tipis dan akrilik yang dibentuk agar sesuai dengan langit-langit mulut pasien atau di sepanjang bagian dalam rahang bawah.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
+                        </div>
+
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={splinting} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Splinting Gigi</h3>
+                            <p className="text-gray-600 mb-4 break-words">Splinting gigi adalah prosedur untuk mengencangkan gigi-gigi yang goyang akibat trauma atau penyakit.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.380k*</a>
+                        </div>
+
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={crown} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Pemasangan Crown Gigi</h3>
+                            <p className="text-gray-600 mb-4 break-words">Dental crown atau crown gigi adalah sebuah proses pemasangan selubung gigi di atas gigi yang rusak.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
+                        </div>
+
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={bridge} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Pemasangan Bridge Gigi</h3>
+                            <p className="text-gray-600 mb-4 break-words">Dental bridge adalah salah satu perawatan yang digunakan untuk mengisi kekosongan pada gigi yang hilang dengan konsep 'jembatan'.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
+                        </div>
+
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={direct_veneer} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Direct Veneer</h3>
+                            <p className="text-gray-600 mb-4 break-words">Direct veneer adalah jenis veneer yang dipasang secara langsung pada pasien menggunakan bahan resin komposit.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.4.700k*</a>
+                        </div>
+
+                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                            <img src={indirect_veneer} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
+                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Indirect Veneer</h3>
+                            <p className="text-gray-600 mb-4 break-words">
+                            Indirect veneer adalah jenis veneer yang umumnya terbuat dari bahan porcelain. Bahan yang satu ini cenderung lebih kuat dan hasilnya pun halus.</p>
+                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.15.000k*</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="dentist" className="bg-gray-100">
+        <section id="dentist" className="bg-white-100">
           <div className="container mx-auto px-6 text-center">
             <h2 className="text-3xl font-bold text-gray-700 mb-5">Dokter Gigi Kami</h2>
             <h3 className="text-gray-700 mb-12">Klik jadwal dokter untuk reservasi</h3>
@@ -476,13 +573,16 @@ const LandingPageMobile = () => {
           </div>
         </section>
 
-        <section id="activity-header" className="container mx-auto px-4 mt-12 text-left bg-white">
+        <section id="activity-header" className="container mx-auto px-4 mt-8 mb-8 text-left bg-white">
           <h2 className="text-3xl font-bold text-gray-700 text-center">Aktivitas Kami</h2>
         </section>
 
-        <section id="activity" className="cursor-pointer container mx-auto py-16 px-4 text-center overflow-y-auto max-h-screen">
-          <div className="flex flex-col items-center space-y-8">
-            <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-103 hover:shadow-2xl w-full md:w-3/4 lg:w-1/2">
+        <section
+          id="activity"
+          className="cursor-pointer container mx-auto py-16 px-4 text-center overflow-y-auto max-h-screen"
+        >
+          <div className="mt-5 space-y-8">
+            <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-103 hover:shadow-2xl">
               <Swiper
                 spaceBetween={10}
                 slidesPerView={1}
@@ -491,24 +591,80 @@ const LandingPageMobile = () => {
                 loop={true}
                 centeredSlides={true}
                 modules={[Pagination, Autoplay]}
-                className="w-full mb-6 mt-5"
+                className="w-full mb-4"
               >
                 <SwiperSlide>
-                  <img src={istanayatim} width="300" height="100" className="rounded-lg mx-auto" alt="Image 1" />
+                  <img
+                    src={istanayatim}
+                    width="300"
+                    height="100"
+                    className="rounded-lg mx-auto mt-4"
+                    alt="Image 1"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src={istanayatim2} width="300" height="100" className="rounded-lg mx-auto" alt="Image 2" />
+                  <img
+                    src={istanayatim2}
+                    width="300"
+                    height="100"
+                    className="rounded-lg mx-auto mt-4"
+                    alt="Image 2"
+                  />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <img src={istanayatim3} width="300" height="100" className="rounded-lg mx-auto" alt="Image 3" />
+                  <img
+                    src={istanayatim3}
+                    width="300"
+                    height="100"
+                    className="rounded-lg mx-auto mt-4"
+                    alt="Image 3"
+                  />
                 </SwiperSlide>
               </Swiper>
-              <div className="text-center">
+              <div className="mt-4">
                 <h3 className="text-xl font-semibold text-gray-700">
                   Yanda Dental Care Mengadakan Program Perawatan Gigi dan Mulut Gratis di Panti Asuhan Istana Yatim
                 </h3>
                 <p className="text-gray-600 mt-2">
                   Yanda Dental Care mengadakan program perawatan gigi dan mulut gratis untuk anak-anak di Panti Asuhan Istana Yatim, sebagai bagian dari komitmen kami untuk memberikan kontribusi positif kepada masyarakat. Program ini mencakup pemeriksaan gigi rutin, pembersihan gigi, penambalan gigi, serta edukasi tentang pentingnya menjaga kesehatan gigi dan mulut, yang semuanya dilakukan oleh tim profesional kami. Dengan dukungan donatur dan relawan, kami berharap dapat meningkatkan kesehatan gigi anak-anak yatim piatu, menghindarkan mereka dari masalah gigi, dan memberikan mereka senyum yang sehat dan indah.
+                </p>
+              </div>
+            </div>
+
+            {/* Kegiatan Donor Darah */}
+            <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-103 hover:shadow-2xl">
+              <img
+                src={donor_darah}
+                width="250"
+                height="100"
+                className="rounded-lg mx-auto mt-4 mb-4"
+                alt="Image Donor Darah"
+              />
+              <div className="mt-4">
+                <h3 className="text-xl font-semibold text-gray-700">
+                  Yanda Dental Care Menjadi Sponsor Seminar dan Pemeriksaan Kesehatan serta Donor Darah
+                </h3>
+                <p className="text-gray-600 mt-2">
+                  Yanda Dental Care turut serta dalam upaya meningkatkan kesadaran kesehatan masyarakat melalui dukungan pada acara seminar kesehatan, yang juga mencakup pemeriksaan kesehatan gratis dan kegiatan donor darah. Seminar ini memberikan informasi penting tentang kesehatan, khususnya kesehatan gigi dan mulut, yang sering kali terabaikan. Selain edukasi, acara ini juga memberikan kesempatan bagi peserta untuk berkontribusi dalam kegiatan donor darah, sebuah aksi nyata yang sangat membantu mereka yang membutuhkan. Dengan dukungan ini, Yanda Dental Care menunjukkan komitmen dalam mendorong gaya hidup sehat di kalangan masyarakat.
+                </p>
+              </div>
+            </div>
+
+            {/* Kegiatan Nobar Timnas */}
+            <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-103 hover:shadow-2xl">
+              <img
+                src={nobar_timnas}
+                width="250"
+                height="100"
+                className="rounded-lg mx-auto mt-4 mb-4"
+                alt="Image Nobar Timnas"
+              />
+              <div className="mt-4">
+                <h3 className="text-xl font-semibold text-gray-700">
+                  Yanda Dental Care Menjadi Sponsor Kegiatan Nonton Bareng Timnas Indonesia di Piala AFF U-19 Boys
+                </h3>
+                <p className="text-gray-600 mt-2">
+                  Yanda Dental Care ikut ambil bagian dalam mendukung semangat sepak bola tanah air dengan menjadi sponsor kegiatan nonton bareng (nobar) Timnas Indonesia di Piala AFF U-19 Boys. Acara nobar ini tidak hanya menjadi kesempatan bagi para penggemar sepak bola untuk merayakan dan mendukung tim kesayangan, tetapi juga sebagai ajang kebersamaan yang menyatukan berbagai kalangan. Dalam kesempatan ini, Yanda Dental Care juga memanfaatkan momen untuk mengedukasi masyarakat mengenai pentingnya menjaga kesehatan gigi dan mulut, sambil menikmati pertandingan yang penuh semangat.
                 </p>
               </div>
             </div>
@@ -529,7 +685,7 @@ const LandingPageMobile = () => {
           </div>
         </section>
 
-        <section id="location" className="bg-gray-100 py-16 text-center">
+        <section id="location" className="bg-white-100 py-16 text-center">
           <div>
             <h2 className="text-3xl font-bold text-gray-700 mb-12 text-center">Lokasi Klinik Kami</h2>
           </div>
@@ -545,8 +701,8 @@ const LandingPageMobile = () => {
           </div>
         </section>
 
-        <div className="fixed bottom-4 right-4 flex items-center space-x-2 bg-white p-4 rounded-lg shadow-lg">
-          <img src={wa} alt="WhatsApp Logo" className="w-8 h-8" />
+        <div className="fixed bottom-4 right-4 flex items-center space-x-2 bg-white p-2 rounded-lg shadow-lg z-30">
+          <img src={wa} alt="WhatsApp Logo" className="w-4 h-4" />
           <a 
             href="https://api.whatsapp.com/send?phone=+6285935000090&text=Halo Admin Yanda Dental Care 😊 Saya ingin booking jadwal di klinik pada hari ... tanggal ... di jam ... Saya butuh layanan ..." 
             target="_blank" 
@@ -568,8 +724,9 @@ const LandingPageMobile = () => {
           <div className="container mx-auto px-4 text-center">
             <div className="flex justify-center space-x-4 mb-4">
               <a href="https://www.instagram.com/yandadentalcare?igsh=MWcwcnljbTB4eG52OA==" className="text-white hover:text-yellow-500"><i className="fab fa-instagram fa-lg"></i></a>
-              <a href="https://www.twitter.com" className="text-white hover:text-yellow-500"><i className="fab fa-twitter fa-lg"></i></a>
-              <a href="https://www.facebook.com" className="text-white hover:text-yellow-500"><i className="fab fa-facebook-f fa-lg"></i></a>
+              <a href="https://twitter.com/Yandadentalcare" className="text-white hover:text-yellow-500"><i className="fab fa-twitter fa-lg"></i></a>
+              <a href="https://www.facebook.com/media/set/?set=a.122112214286268306" className="text-white hover:text-yellow-500"><i className="fab fa-facebook-f fa-lg"></i></a>
+              <a href="https://www.tiktok.com/@yandadentalcarejakarta" className="text-white hover:text-yellow-500"><i className="fab fa-tiktok fa-lg"></i></a>
             </div>
             <p>&copy; 2024 Yanda Dental Care. All rights reserved.</p>
           </div>

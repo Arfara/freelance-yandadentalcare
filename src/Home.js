@@ -20,7 +20,7 @@ const blogs = [
 
 const Home = () => {
   return (
-    <section id="blogs" className="bg-gray-100 py-16">
+    <section id="blogs" className="bg-white-100 py-16">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold text-gray-700 mb-12">Blogs</h2>
         <div className="overflow-x-auto">
