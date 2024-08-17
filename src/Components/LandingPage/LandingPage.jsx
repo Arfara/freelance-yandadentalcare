@@ -218,7 +218,7 @@ const LandingPage = () => {
   return (
     <div className='relative'>
       <Helmet>
-        <title>Yanda Dental Care - Klinik Gigi Berkualitas dengan Fasilitas Modern</title>
+        <title>Yanda Dental Care - Klinik Gigi Jakarta</title>
         <meta name="description" content="Yanda Dental Care berlokasi di Jakarta Garden City, Cakung, Jakarta Timur, menyediakan layanan perawatan gigi yang murah dan berkualitas dengan fasilitas modern. Kunjungi kami untuk pengalaman perawatan gigi terbaik." />
         <meta name="keywords" content="pembersihan karang gigi,  pencabutan gigi, dental jakarta garden city, klinik gigi cakung, klinik gigi jakarta timur, dokter gigi jakarta timur, perawatan gigi berlubang, cabut gigi terdekat,  dokter gigi terdekat, pasang gigi palsu terdekat, klinik gigi terdekat, dental clinic terdekat, klinik cabut gigi terdekat,  ahli gigi terdekat, dental terdekat, dokter gigi sekitar sini, dokter gigi orthodontist terdekat, pasang behel terdekat, tambal gigi terdekat, dental klinik terdekat. " />
         <meta property="og:title" content="Home - Yanda Dental Care" />
@@ -398,146 +398,146 @@ const LandingPage = () => {
 
         <Element name="services">
           <section id="services" className="bg-white-100 py-16">
-            <div className="container mx-auto px-6 text-center">
-                <h2 className="text-3xl font-bold text-gray-700 mb-12">Layanan Kami</h2>
-                <div className="overflow-x-auto">
-                    <div className="flex space-x-6 overflow-x-auto py-8 px-8">
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={pem_gigi_dewasa} alt="Perawatan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Konsultasi Gigi</h3>
-                            <p className="text-gray-600 mb-4 break-words">Perawatan ini membantu menghilangkan plak, tartar, dan mencegah masalah gigi serta gusi.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.50k*</a>
-                        </div>
+              <div className="container mx-auto px-6 text-center">
+                  <h2 className="text-3xl font-bold text-gray-700">Layanan Kami</h2>
+                  <div className="overflow-x-auto">
+                      <div className="flex space-x-6 overflow-x-auto py-8 px-8">
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={pem_gigi_dewasa} alt="Konsultasi Gigi di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Konsultasi Gigi</h3>
+                              <p className="text-gray-600 mb-4 break-words">Dapatkan penilaian profesional dan solusi terbaik untuk kesehatan gigi dan mulut Anda di klinik kami. Ahli gigi berpengalaman siap membantu dengan pendekatan yang ramah dan mendetail, memastikan senyum Anda selalu terjaga dengan baik</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.50k*</a>
+                          </div>
 
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={pem_gigi_anak} alt="Perawatan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Penambalan Gigi Anak</h3>
-                            <p className="text-gray-600 mb-4 break-words">Perawatan khusus untuk anak-anak yang menjaga kesehatan gigi mereka dengan metode yang lembut dan menyenangkan, memastikan gigi mereka tumbuh sehat.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.285k*</a>
-                        </div>
-                        
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={cabut_gigi_anak} alt="Perawatan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Pecabutan Gigi Anak</h3>
-                            <p className="text-gray-600 mb-4 break-words">Perawatan khusus untuk anak-anak yang menjaga kesehatan gigi mereka dengan metode yang lembut dan menyenangkan, memastikan gigi mereka tumbuh sehat.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.190k*</a>
-                        </div>
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={pem_gigi_anak} alt="Penambalan gigi anak di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Penambalan Gigi Anak</h3>
+                              <p className="text-gray-600 mb-4 break-words">Lindungi kesehatan gigi si kecil dengan layanan penambalan gigi yang nyaman dan aman di klinik kami. Ahli gigi kami siap memastikan pengalaman yang menyenangkan dan senyum sehat yang terjaga.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.285k*</a>
+                          </div>
+                          
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={cabut_gigi_anak} alt="Cabut gigi anak di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Pecabutan Gigi Anak</h3>
+                              <p className="text-gray-600 mb-4 break-words">Pastikan proses pencabutan gigi anak Anda berjalan aman dan nyaman di klinik kami. Dengan pendekatan yang lembut dan ramah, ahli gigi kami akan membantu menjaga kesehatan mulut si kecil dengan pengalaman yang tidak menakutkan.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.190k*</a>
+                          </div>
 
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={ortodonti} alt="Ortodonti" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Ortodonti</h3>
-                            <p className="text-gray-600 mb-4 break-words">Perawatan ortodonti untuk merapikan gigi dan rahang Anda, menggunakan alat seperti kawat gigi untuk hasil yang lebih baik dan senyum yang lebih proporsional.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.800k*</a>
-                        </div>
-                        
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={cabut_gigi} alt="Pencabutan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Pencabutan Gigi</h3>
-                            <p className="text-gray-600 mb-4 break-words">Cabut gigi adalah proses pengangkatan gigi dari soket gigi pada tulang rahang. Pasien yang mengalami nyeri dan tidak nyaman dengan pertumbuhan gigi menyimpang atau masalah gigi lainnya dapat mengambil tindakan ini.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.400k*</a>
-                        </div>
-                        
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={gigi_palsu} alt="Pembuatan Gigi Palsu" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Pembuatan Gigi Palsu</h3>
-                            <p className="text-gray-600 mb-4 break-words">Gigi palsu yang dibuat dengan presisi untuk memberikan kenyamanan dan fungsi seperti gigi asli, membantu Anda tersenyum dengan percaya diri.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.000k*</a>
-                        </div>
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={ortodonti} alt="Ortodonti di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Ortodonti</h3>
+                              <p className="text-gray-600 mb-4 break-words">Perawatan ortodonti untuk merapikan gigi dan rahang Anda, menggunakan alat seperti kawat gigi untuk hasil yang lebih baik dan senyum yang lebih proporsional.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.800k*</a>
+                          </div>
+                          
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={cabut_gigi} alt="Cabut gigi di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Pencabutan Gigi</h3>
+                              <p className="text-gray-600 mb-4 break-words">Cabut gigi adalah proses pengangkatan gigi dari soket gigi pada tulang rahang. Pasien yang mengalami nyeri dan tidak nyaman dengan pertumbuhan gigi menyimpang atau masalah gigi lainnya dapat mengambil tindakan ini.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.400k*</a>
+                          </div>
+                          
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={gigi_palsu} alt="Pembuatan Gigi Palsu di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Pembuatan Gigi Palsu</h3>
+                              <p className="text-gray-600 mb-4 break-words">Gigi palsu yang dibuat dengan presisi untuk memberikan kenyamanan dan fungsi seperti gigi asli, membantu Anda tersenyum dengan percaya diri.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.000k*</a>
+                          </div>
 
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={implan_gigi} alt="Pembuatan Gigi Palsu" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Implan Gigi</h3>
-                            <p className="text-gray-600 mb-4 break-words">Implan adalah akar gigi yang ditanamkan ke dalam rahang untuk menggantikan gigi yang copot. Terbuat dari titanium yang ringan, kuat, dan biokompatibel, implan gigi dapat diterima oleh tubuh.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.19.000k*</a>
-                        </div>
-                        
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={bleaching} alt="Bleaching" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Bleaching</h3>
-                            <p className="text-gray-600 mb-4 break-words">Prosedur pemutihan gigi untuk mencerahkan senyum Anda dengan aman, menghilangkan noda dan menjadikan gigi Anda lebih bersinar.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.999k*</a>
-                        </div>
-                        
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={akar_gigi} alt="Perawatan Saluran Akar" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Perawatan Saluran Akar</h3>
-                            <p className="text-gray-600 mb-4 break-words">Perawatan untuk mengatasi infeksi dalam saluran akar gigi, memberikan solusi jangka panjang untuk masalah gigi yang parah dan mengurangi rasa sakit.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.400k*</a>
-                        </div>
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={implan_gigi} alt="Implan Gigi di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Implan Gigi</h3>
+                              <p className="text-gray-600 mb-4 break-words">Implan adalah akar gigi yang ditanamkan ke dalam rahang untuk menggantikan gigi yang copot. Terbuat dari titanium yang ringan, kuat, dan biokompatibel, implan gigi dapat diterima oleh tubuh.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.19.000k*</a>
+                          </div>
+                          
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={bleaching} alt="Bleaching di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Bleaching</h3>
+                              <p className="text-gray-600 mb-4 break-words">Prosedur pemutihan gigi untuk mencerahkan senyum Anda dengan aman, menghilangkan noda dan menjadikan gigi Anda lebih bersinar.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.999k*</a>
+                          </div>
+                          
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={akar_gigi} alt="Perawatan Saluran Akar di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Perawatan Saluran Akar</h3>
+                              <p className="text-gray-600 mb-4 break-words">Perawatan untuk mengatasi infeksi dalam saluran akar gigi, memberikan solusi jangka panjang untuk masalah gigi yang parah dan mengurangi rasa sakit.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.400k*</a>
+                          </div>
 
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={karang_gigi} alt="Pembersihan Karang Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Pembersihan Karang Gigi</h3>
-                            <p className="text-gray-600 mb-4 break-words">Proses pembersihan yang mendalam untuk menghilangkan karang gigi yang menumpuk, mencegah penyakit gusi dan menjaga kesehatan mulut Anda.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.150k*</a>
-                        </div>
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={karang_gigi} alt="Pembersihan Karang Gigi di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Pembersihan Karang Gigi</h3>
+                              <p className="text-gray-600 mb-4 break-words">Proses pembersihan yang mendalam untuk menghilangkan karang gigi yang menumpuk, mencegah penyakit gusi dan menjaga kesehatan mulut Anda.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.150k*</a>
+                          </div>
 
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={tambal_gigi} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Penambalan Gigi</h3>
-                            <p className="text-gray-600 mb-4 break-words">Tambal gigi adalah prosedur yang dilakukan untuk mengisi celah pada gigi berlubang.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.350k*</a>
-                        </div>
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={tambal_gigi} alt="Penambalan Gigi di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Penambalan Gigi</h3>
+                              <p className="text-gray-600 mb-4 break-words">Tambal gigi adalah prosedur yang dilakukan untuk mengisi celah pada gigi berlubang.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.350k*</a>
+                          </div>
 
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={gingivektomi} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Gingivektomi</h3>
-                            <p className="text-gray-600 mb-4 break-words">Gingivektomi adalah prosedur bedah untuk mengangkat gingiva atau jaringan gusi.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.475k*</a>
-                        </div>
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={gingivektomi} alt="Gingivektomi di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Gingivektomi</h3>
+                              <p className="text-gray-600 mb-4 break-words">Gingivektomi adalah prosedur bedah untuk mengangkat gingiva atau jaringan gusi.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.475k*</a>
+                          </div>
 
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={retainer_gigi} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Retainer Permanen</h3>
-                            <p className="text-gray-600 mb-4 break-words">Retainer adalah alat untuk mempertahankan posisi gigi agar tetap rapi dan tidak kembali berantakan setelah lepas behel. Retainer gigi permanen terbuat dari kawat tebal yang dibuat sesuai bentuk gigi yang sudah rapi.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.1.425k*</a>
-                        </div>
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={retainer_gigi} alt="Pasang Retainer di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Retainer Permanen</h3>
+                              <p className="text-gray-600 mb-4 break-words">Retainer adalah alat untuk mempertahankan posisi gigi agar tetap rapi dan tidak kembali berantakan setelah lepas behel. Retainer gigi permanen terbuat dari kawat tebal yang dibuat sesuai bentuk gigi yang sudah rapi.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.1.425k*</a>
+                          </div>
 
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={retainer_remove} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Retainer Removable</h3>
-                            <p className="text-gray-600 mb-4 break-words">Retainer adalah alat untuk mempertahankan posisi gigi agar tetap rapi dan tidak kembali berantakan setelah lepas behel. Retainer Hawley terbuat dari kawat logam tipis dan akrilik yang dibentuk agar sesuai dengan langit-langit mulut pasien atau di sepanjang bagian dalam rahang bawah.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
-                        </div>
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={retainer_remove} alt="Pasang Retainer di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Retainer Removable</h3>
+                              <p className="text-gray-600 mb-4 break-words">Retainer adalah alat untuk mempertahankan posisi gigi agar tetap rapi dan tidak kembali berantakan setelah lepas behel. Retainer Hawley terbuat dari kawat logam tipis dan akrilik yang dibentuk agar sesuai dengan langit-langit mulut pasien atau di sepanjang bagian dalam rahang bawah.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
+                          </div>
 
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={splinting} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Splinting Gigi</h3>
-                            <p className="text-gray-600 mb-4 break-words">Splinting gigi adalah prosedur untuk mengencangkan gigi-gigi yang goyang akibat trauma atau penyakit.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.380k*</a>
-                        </div>
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={splinting} alt="Splinting gigi di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Splinting Gigi</h3>
+                              <p className="text-gray-600 mb-4 break-words">Splinting gigi adalah prosedur untuk mengencangkan gigi-gigi yang goyang akibat trauma atau penyakit.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.380k*</a>
+                          </div>
 
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={crown} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Pemasangan Crown Gigi</h3>
-                            <p className="text-gray-600 mb-4 break-words">Dental crown atau crown gigi adalah sebuah proses pemasangan selubung gigi di atas gigi yang rusak.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
-                        </div>
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={crown} alt="Pasang crown gigi di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Pemasangan Crown Gigi</h3>
+                              <p className="text-gray-600 mb-4 break-words">Dental crown atau crown gigi adalah sebuah proses pemasangan selubung gigi di atas gigi yang rusak.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
+                          </div>
 
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={bridge} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Pemasangan Bridge Gigi</h3>
-                            <p className="text-gray-600 mb-4 break-words">Dental bridge adalah salah satu perawatan yang digunakan untuk mengisi kekosongan pada gigi yang hilang dengan konsep 'jembatan'.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
-                        </div>
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={bridge} alt="Pasang dental bridge di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Pemasangan Bridge Gigi</h3>
+                              <p className="text-gray-600 mb-4 break-words">Dental bridge adalah salah satu perawatan yang digunakan untuk mengisi kekosongan pada gigi yang hilang dengan konsep 'jembatan'.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.2.375k*</a>
+                          </div>
 
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={direct_veneer} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Direct Veneer</h3>
-                            <p className="text-gray-600 mb-4 break-words">Direct veneer adalah jenis veneer yang dipasang secara langsung pada pasien menggunakan bahan resin komposit.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.4.700k*</a>
-                        </div>
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={direct_veneer} alt="Veneer gigi di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Direct Veneer</h3>
+                              <p className="text-gray-600 mb-4 break-words">Direct veneer adalah jenis veneer yang dipasang secara langsung pada pasien menggunakan bahan resin komposit.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.4.700k*</a>
+                          </div>
 
-                        <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
-                            <img src={indirect_veneer} alt="Penambalan Gigi" className="h-40 w-full object-cover rounded-md mb-4"/>
-                            <h3 className="text-xl font-semibold text-gray-700 mb-2">Indirect Veneer</h3>
-                            <p className="text-gray-600 mb-4 break-words">
-                            Indirect veneer adalah jenis veneer yang umumnya terbuat dari bahan porcelain. Bahan yang satu ini cenderung lebih kuat dan hasilnya pun halus.</p>
-                            <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.15.000k*</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                          <div className="bg-white shadow-lg rounded-lg p-6 w-80 flex-none transition-transform transform hover:scale-105 hover:shadow-xl hover:transform-origin-center">
+                              <img src={indirect_veneer} alt="Veneer gigi di Yanda Dental Care" className="h-40 w-full object-cover rounded-md mb-4"/>
+                              <h3 className="text-xl font-semibold text-gray-700 mb-2">Indirect Veneer</h3>
+                              <p className="text-gray-600 mb-4 break-words">
+                              Indirect veneer adalah jenis veneer yang umumnya terbuat dari bahan porcelain. Bahan yang satu ini cenderung lebih kuat dan hasilnya pun halus.</p>
+                              <a href="#" className="text-yellow-500 font-semibold inline-block">Mulai dari Rp.15.000k*</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </section>
         </Element>
 
