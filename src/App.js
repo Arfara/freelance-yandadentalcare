@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react"
 import LandingPage from "./Components/LandingPage/LandingPage";
 import LandingPageMobile from "./Components/LandingPage/LandingPageMobile";
 import BlogPost from "./BlogPost";
@@ -68,6 +69,7 @@ function App() {
           <Route path="/blog/:slug" Component={BlogPost}/>
         </Routes>
       </Router>
+      <Analytics />
     </div>
   );
 }
