@@ -90,7 +90,7 @@ const doctors = [
   {
     image: dokjanet,
     name: 'drg. Jannette Lazia',
-    description: 'Kamis: 15.00 - 20.00',
+    description: 'Minggu: 15.00 - 20.00',
     phoneNumber: '+6285935000090', 
     message: 'Halo Admin Yanda Dental Care 😊, saya ingin menanyakan tentang jadwal Dokter Jannette'
   },
