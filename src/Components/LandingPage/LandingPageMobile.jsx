@@ -200,12 +200,12 @@ const LandingPageMobile = () => {
   return (
     <div className="font-sans relative">
       <Helmet>
-        <title>Yanda Dental Care - Klinik Gigi Jakarta</title>
+        <title>Yanda Dental Care | Dokter Gigi Cakung</title>
         <meta name="description" content="Yanda Dental Care berada Jakarta Garden City, Cakung. Layanan gigi murah, profesional, berkualitas, dengan fasilitas modern untuk perawatan gigi terbaik" />
         <meta name="keywords" content="pembersihan karang gigi,  pencabutan gigi, dental jakarta garden city, klinik gigi cakung, klinik gigi jakarta timur, dokter gigi jakarta timur, perawatan gigi berlubang, cabut gigi terdekat,  dokter gigi terdekat, pasang gigi palsu terdekat, klinik gigi terdekat, dental clinic terdekat, klinik cabut gigi terdekat,  ahli gigi terdekat, dental terdekat, dokter gigi sekitar sini, dokter gigi orthodontist terdekat, pasang behel terdekat, tambal gigi terdekat, dental klinik terdekat. " />
         <meta property="og:title" content="Home - Yanda Dental Care" />
         <meta property="og:description" content="Selamat datang di Yanda Dental Care, Klinik Gigi Berkualitas dengan Dokter Profesional" />
-        <meta property="og:image" content="https://yandadentalcare.id/static/media/dokyanda.bf1f29ee9b78339d63007430d49361f4.svg" />
+        <meta property="og:image" content="https://yandadentalcare.id/static/media/logo_1.1242e67a66346c3914b0257ccf256deb.svg" />
         <meta property="og:url" content="https://yandadentalcare.id/" />
       </Helmet>
       <div
