@@ -286,7 +286,7 @@ const LandingPageMobile = () => {
               </div>
               <div className="md:w-2/3 md:ml-10 rounded-lg bg-white shadow-xl p-6 md:p-8">
                 <h1 className="text-xl font-semibold mb-6">
-                  Pelayanan Kesehatan Gigi dan Mulut oleh Dokter gigi yang ramah, profesional, dan berpengalaman
+                  Pelayanan kesehatan gigi dan mulut oleh dokter gigi yang ramah, profesional, dan berpengalaman
                 </h1>
                 <ul className="mt-6 space-y-4">
                   <li className="flex flex-col items-start">
@@ -300,7 +300,7 @@ const LandingPageMobile = () => {
                   <li className="flex flex-col items-start mt-4">
                     <div className="bg-gray-100 border-b-4 border-yellow-500 shadow-md rounded-lg p-4 flex-1 w-full">
                       <h2 className="text-gray-800 font-bold text-lg">
-                        Mengutamakan Keluhan, kebutuhan, dan kepentingan pasien
+                        Mengutamakan keluhan, kebutuhan, dan kepentingan pasien
                       </h2>
                       <p className="text-gray-600 text-sm">Yanda Dental Care memprioritaskan setiap aspek kebutuhan pasien untuk perawatan yang lebih personal dan efektif.</p>
                     </div>
