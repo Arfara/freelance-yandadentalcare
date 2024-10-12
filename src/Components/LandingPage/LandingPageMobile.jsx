@@ -601,7 +601,7 @@ const LandingPageMobile = () => {
 
         <section
           id="activity"
-          className="cursor-pointer container mx-auto px-4 text-center overflow-y-auto max-h-screen"
+          className="cursor-pointer container mx-auto px-4 py-4 text-center overflow-y-auto max-h-screen"
         >
           <div className="space-y-8">
             <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-103 hover:shadow-2xl">
