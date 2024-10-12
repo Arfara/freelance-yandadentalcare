@@ -51,6 +51,13 @@ import klinik4 from '../Assets/klinik4.png';
 import klinik5 from '../Assets/klinik5.png';
 import klinik6 from '../Assets/klinik6.png';
 import fluid1 from '../Assets/fluid1.png';
+import fieldtrip1 from '../Assets/fieldtrip1.png';
+import fieldtrip2 from '../Assets/fieldtrip2.png';
+import fieldtrip3 from '../Assets/fieldtrip3.png';
+import fieldtrip4 from '../Assets/fieldtrip4.png';
+import fieldtrip5 from '../Assets/fieldtrip5.png';
+import fieldtrip6 from '../Assets/fieldtrip6.png';
+
 
 const doctors = [
   {
@@ -172,15 +179,18 @@ const LandingPage = () => {
   
               const authorContainer = document.createElement('div');
               authorContainer.className = 'flex flex-col items-center mb-2';
-  
+
               if (review.profile_photo_url) {
+                console.log('Profile photo URL:', review.profile_photo_url);
                 const profilePhoto = document.createElement('img');
                 profilePhoto.src = review.profile_photo_url;
                 profilePhoto.alt = 'Profile photo';
                 profilePhoto.className = 'w-10 h-10 rounded-full mb-2';
                 authorContainer.appendChild(profilePhoto);
+              } else {
+                console.log('No profile photo for:', review.author_name);
               }
-  
+              
               const author = document.createElement('h3');
               author.className = 'text-xl font-semibold text-gray-700 text-center';
               author.textContent = review.author_name;
@@ -594,6 +604,80 @@ const LandingPage = () => {
             className="cursor-pointer container mx-auto py-16 px-4 text-left overflow-y-auto max-h-screen"
           >
             <div className="mt-5 space-y-8">
+              {/* Kegiatan Field Trip */}
+              <div className="flex items-start bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-103 hover:shadow-2xl">
+                <Swiper
+                  spaceBetween={10}
+                  slidesPerView={1}
+                  pagination={{ clickable: true }}
+                  autoplay={{ delay: 2000 }}
+                  loop={true}
+                  centeredSlides={true}
+                  modules={[Pagination, Autoplay]}
+                  className="w-full"
+                >
+                  <SwiperSlide>
+                    <div className="w-full h-auto">
+                      <img
+                        src={fieldtrip1}
+                        className="w-full h-72 object-cover rounded-lg"
+                        alt="Field Trip 1"
+                        style={{ aspectRatio: "3 / 4" }}
+                      />
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src={fieldtrip2}
+                      className="w-full h-72 object-cover rounded-lg"
+                      alt="Field Trip 2"
+                      style={{ aspectRatio: "3 / 4" }}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src={fieldtrip3}
+                      className="w-full h-72 object-cover rounded-lg"
+                      alt="Field Trip 3"
+                      style={{ aspectRatio: "3 / 4" }}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src={fieldtrip4}
+                      className="w-full h-72 object-cover rounded-lg"
+                      alt="Field Trip 4"
+                      style={{ aspectRatio: "3 / 4" }}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src={fieldtrip5}
+                      className="w-full h-72 object-cover rounded-lg"
+                      alt="Field Trip 5"
+                      style={{ aspectRatio: "3 / 4" }}
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src={fieldtrip6}
+                      className="w-full h-72 object-cover rounded-lg"
+                      alt="Field Trip 6"
+                      style={{ aspectRatio: "3 / 4" }}
+                    />
+                  </SwiperSlide>
+                </Swiper>
+                <div className="ml-10">
+                  <h3 className="text-xl font-semibold text-gray-700">
+                    Yanda Dental Care Mengadakan Program Perawatan Gigi dan Mulut Gratis di Panti Asuhan Istana Yatim
+                  </h3>
+                  <p className="text-gray-600 mt-2">
+                    Pada Bulan September ini Yanda Dental Care berkesempatan mengunjungi adik - adik diSekolah Murid Merdeka, Cakung, Jakarta Garden City untuk melakukan edukasi seputar kesehatan gigi dan mulut disertai kunjungan ke klinik kami untuk memperkenalkan tim, ruang kerja, beserta prosedur tindakan yang biasa di lakukan di Yanda Dental Care. Kegiatan ini bertujuan untuk memberikan upaya promotif dan preventif agar meningkatkan ketertarikan serta kesadaran anak usia sekolah atas kesehatan gigi dan mulutnya, dimana usia gigi bercampur adalah usia paling krusial dan riskan sehingga sangat penting untuk di awasi tumbuh dan kembang gigi geligi tersebut. Sesuai dengan motto Yanda Dental Care yaitu Provide a Healthy Smile, kami berharap kegiatan ini dapat menjadi kegiatan yang sustainable sehingga dapat meingkatkan kesehatan gigi mulut anak - anak di Sekolah Murid Merdeka.
+                  </p>
+                </div>
+              </div>
+
+              {/* Kegiatan Istana Yatim */}
               <div className="flex items-start bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-103 hover:shadow-2xl">
                 <Swiper
                   spaceBetween={10}
@@ -608,22 +692,25 @@ const LandingPage = () => {
                   <SwiperSlide>
                     <img
                       src={istanayatim}
-                      className="w-full h-48 md:h-64 lg:h-80 object-cover rounded-lg"
-                      alt="Image 1"
+                      className="w-full object-cover rounded-lg"
+                      alt="Istana Yatim 1"
+                      style={{ aspectRatio: "3 / 4" }}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <img
                       src={istanayatim2}
-                      className="w-full h-48 md:h-64 lg:h-80 object-cover rounded-lg"
-                      alt="Image 2"
+                      className="w-full object-cover rounded-lg"
+                      alt="Istana Yatim 2"
+                      style={{ aspectRatio: "3 / 4" }}
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <img
                       src={istanayatim3}
-                      className="w-full h-48 md:h-64 lg:h-80 object-cover rounded-lg"
-                      alt="Image 3"
+                      className="w-full object-cover rounded-lg"
+                      alt="Istana Yatim 3"
+                      style={{ aspectRatio: "3 / 4" }}
                     />
                   </SwiperSlide>
                 </Swiper>

@@ -51,6 +51,13 @@ import klinik4 from '../Assets/klinik4.png';
 import klinik5 from '../Assets/klinik5.png';
 import klinik6 from '../Assets/klinik6.png';
 import fluid1 from '../Assets/fluid1.png';
+import fieldtrip1 from '../Assets/fieldtrip1.png';
+import fieldtrip2 from '../Assets/fieldtrip2.png';
+import fieldtrip3 from '../Assets/fieldtrip3.png';
+import fieldtrip4 from '../Assets/fieldtrip4.png';
+import fieldtrip5 from '../Assets/fieldtrip5.png';
+import fieldtrip6 from '../Assets/fieldtrip6.png';
+
 
 const doctors = [
   {
@@ -209,13 +216,19 @@ const LandingPageMobile = () => {
         <meta property="og:url" content="https://yandadentalcare.id/" />
       </Helmet>
       <div
-        className={`rounded-lg p-10 fixed top-0 right-0 bg-gray-900 text-white transform ${
+        className={`rounded-lg p-10 fixed right-0 bg-gray-900 text-white transform ${
           sidebarOpen ? 'translate-x-0' : 'translate-x-full'
         } transition-transform duration-300 ease-in-out z-50`}
-        style={{ width: '75vw', maxHeight: '100vh' }} 
+        style={{ width: '100vw', maxHeight: '100vh' }} // Set width to 100vw for full screen on mobile
       >
-        <div className="flex justify-end">
-          <button onClick={() => setSidebarOpen(false)} className="text-white text-2xl">&times;</button>
+        <div className="flex justify-between items-center">
+          {/* Logo inside the sidebar */}
+          <img src={logo1} className="w-32 transform scale-150 cursor-pointer" alt="Logo" />
+          
+          {/* Close button */}
+          <button onClick={() => setSidebarOpen(false)} className="text-white text-2xl">
+            &times;
+          </button>
         </div>
         <nav className="flex flex-col items-center mt-8">
           <a href="#home" className="text-white text-lg py-2">Home</a>
@@ -225,8 +238,8 @@ const LandingPageMobile = () => {
         </nav>
       </div>
 
-      <header className="bg-gray-900 text-white flex items-center justify-between p-4 fixed top-0 left-0 right-0 z-20">
-        <img src={logo1} className="w-20 transform scale-150 ml-4 cursor-pointer" alt="Logo" />
+      <header className="bg-gray-900 text-white flex items-center justify-between p-6 fixed top-0 left-0 right-0 z-20">
+        <img src={logo1} className="w-32 transform scale-150 ml-4 cursor-pointer" alt="Logo" />
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
           className="text-white text-2xl lg:hidden"
@@ -588,9 +601,88 @@ const LandingPageMobile = () => {
 
         <section
           id="activity"
-          className="cursor-pointer container mx-auto py-16 px-4 text-center overflow-y-auto max-h-screen"
+          className="cursor-pointer container mx-auto px-4 text-center overflow-y-auto max-h-screen"
         >
-          <div className="mt-5 space-y-8">
+          <div className="space-y-8">
+            <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-103 hover:shadow-2xl">
+              <Swiper
+                spaceBetween={10}
+                slidesPerView={1}
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 2000 }}
+                loop={true}
+                centeredSlides={true}
+                modules={[Pagination, Autoplay]}
+                className="w-full mb-4"
+              >
+                <SwiperSlide>
+                  <div className="w-full h-auto">
+                    <img
+                      src={fieldtrip1}
+                      width="300"
+                      height="100"
+                      className="rounded-lg mx-auto mt-4"
+                      alt="Field Trip 1"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src={fieldtrip2}
+                    width="300"
+                    height="100"
+                    className="rounded-lg mx-auto mt-4"
+                    alt="Field Trip 2"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src={fieldtrip3}
+                    width="300"
+                    height="100"
+                    className="rounded-lg mx-auto mt-4"
+                    alt="Field Trip 3"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src={fieldtrip4}
+                    width="300"
+                    height="100"
+                    className="rounded-lg mx-auto mt-4"
+                    alt="Field Trip 4"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src={fieldtrip5}
+                    width="300"
+                    height="100"
+                    className="rounded-lg mx-auto mt-4"
+                    alt="Field Trip 5"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src={fieldtrip6}
+                    width="300"
+                    height="100"
+                    className="rounded-lg mx-auto mt-4"
+                    alt="Field Trip 6"
+                  />
+                </SwiperSlide>
+              </Swiper>
+              <div className="mt-4">
+                <h3 className="text-xl font-semibold text-gray-700">
+                  Yanda Dental Care Mengadakan Program Perawatan Gigi dan Mulut Gratis di Panti Asuhan Istana Yatim
+                </h3>
+                <p className="text-gray-600 mt-2">
+                  Pada Bulan September ini Yanda Dental Care berkesempatan mengunjungi adik - adik diSekolah Murid Merdeka, Cakung, Jakarta Garden City untuk melakukan edukasi seputar kesehatan gigi dan mulut disertai kunjungan ke klinik kami untuk memperkenalkan tim, ruang kerja, beserta prosedur tindakan yang biasa di lakukan di Yanda Dental Care. Kegiatan ini bertujuan untuk memberikan upaya promotif dan preventif agar meningkatkan ketertarikan serta kesadaran anak usia sekolah atas kesehatan gigi dan mulutnya, dimana usia gigi bercampur adalah usia paling krusial dan riskan sehingga sangat penting untuk di awasi tumbuh dan kembang gigi geligi tersebut. Sesuai dengan motto Yanda Dental Care yaitu Provide a Healthy Smile, kami berharap kegiatan ini dapat menjadi kegiatan yang sustainable sehingga dapat meingkatkan kesehatan gigi mulut anak - anak di Sekolah Murid Merdeka.
+                </p>
+              </div>
+            </div>
+            
+            {/* Kegiatan Istana Yatim */}
             <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-4 transform transition duration-300 hover:scale-103 hover:shadow-2xl">
               <Swiper
                 spaceBetween={10}
