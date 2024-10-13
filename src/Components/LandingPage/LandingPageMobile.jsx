@@ -674,10 +674,10 @@ const LandingPageMobile = () => {
               </Swiper>
               <div className="mt-4">
                 <h3 className="text-xl font-semibold text-gray-700">
-                  Yanda Dental Care Mengadakan Program Perawatan Gigi dan Mulut Gratis di Panti Asuhan Istana Yatim
+                  Yanda Dental Care Mengadakan Kunjungan dan Edukasi ke Sekolah Murid Merdeka
                 </h3>
                 <p className="text-gray-600 mt-2">
-                  Pada Bulan September ini Yanda Dental Care berkesempatan mengunjungi adik - adik diSekolah Murid Merdeka, Cakung, Jakarta Garden City untuk melakukan edukasi seputar kesehatan gigi dan mulut disertai kunjungan ke klinik kami untuk memperkenalkan tim, ruang kerja, beserta prosedur tindakan yang biasa di lakukan di Yanda Dental Care. Kegiatan ini bertujuan untuk memberikan upaya promotif dan preventif agar meningkatkan ketertarikan serta kesadaran anak usia sekolah atas kesehatan gigi dan mulutnya, dimana usia gigi bercampur adalah usia paling krusial dan riskan sehingga sangat penting untuk di awasi tumbuh dan kembang gigi geligi tersebut. Sesuai dengan motto Yanda Dental Care yaitu Provide a Healthy Smile, kami berharap kegiatan ini dapat menjadi kegiatan yang sustainable sehingga dapat meingkatkan kesehatan gigi mulut anak - anak di Sekolah Murid Merdeka.
+                  Pada Bulan September ini Yanda Dental Care berkesempatan mengunjungi adik - adik di Sekolah Murid Merdeka, Cakung, Jakarta Garden City untuk melakukan edukasi seputar kesehatan gigi dan mulut disertai kunjungan ke klinik kami untuk memperkenalkan tim, ruang kerja, beserta prosedur tindakan yang biasa di lakukan di Yanda Dental Care. Kegiatan ini bertujuan untuk memberikan upaya promotif dan preventif agar meningkatkan ketertarikan serta kesadaran anak usia sekolah atas kesehatan gigi dan mulutnya, dimana usia gigi bercampur adalah usia paling krusial dan riskan sehingga sangat penting untuk di awasi tumbuh dan kembang gigi geligi tersebut. Sesuai dengan motto Yanda Dental Care yaitu Provide a Healthy Smile, kami berharap kegiatan ini dapat menjadi kegiatan yang sustainable sehingga dapat meingkatkan kesehatan gigi mulut anak - anak di Sekolah Murid Merdeka.
                 </p>
               </div>
             </div>
